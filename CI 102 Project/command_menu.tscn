@@ -1,0 +1,207 @@
+[gd_scene load_steps=13 format=3 uid="uid://b3brubriacfvw"]
+
+[ext_resource type="Script" path="res://attack.gd" id="1_cp4ja"]
+[ext_resource type="Script" path="res://command_menu.gd" id="1_wh3e0"]
+[ext_resource type="Script" path="res://magic.gd" id="2_py1mr"]
+[ext_resource type="Texture2D" uid="uid://cedvv213vaddm" path="res://command_window.png" id="4_dv7mv"]
+[ext_resource type="Script" path="res://skill_1.gd" id="4_rktan"]
+[ext_resource type="Script" path="res://skills_window.gd" id="5_q7h2t"]
+[ext_resource type="Script" path="res://skill_2.gd" id="5_rys1y"]
+[ext_resource type="Script" path="res://item_1.gd" id="6_2ck1u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nolgo"]
+size = Vector2(67, 24)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vha6y"]
+bg_color = Color(0.113725, 0, 0.921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6ds0"]
+bg_color = Color(0.113725, 0, 0.921569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvwxu"]
+bg_color = Color(0.113725, 0, 0.921569, 1)
+
+[node name="command_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wh3e0")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="collision_attack" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(533.5, 542)
+shape = SubResource("RectangleShape2D_nolgo")
+
+[node name="collision_skills" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(533, 569)
+shape = SubResource("RectangleShape2D_nolgo")
+
+[node name="collision_items" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(533, 596)
+shape = SubResource("RectangleShape2D_nolgo")
+
+[node name="skills" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 662.0
+offset_top = 523.0
+offset_right = 689.0
+offset_bottom = 537.0
+
+[node name="skills_window" type="Sprite2D" parent="skills"]
+position = Vector2(-107, 55)
+scale = Vector2(0.571984, 0.194059)
+texture = ExtResource("4_dv7mv")
+script = ExtResource("5_q7h2t")
+
+[node name="row_1" type="HBoxContainer" parent="skills/skills_window"]
+offset_left = -242.0
+offset_top = -222.0
+offset_right = 3.0
+offset_bottom = -150.0
+scale = Vector2(2, 2)
+size_flags_stretch_ratio = 1.18
+
+[node name="VBoxContainer" type="VBoxContainer" parent="skills/skills_window/row_1"]
+custom_minimum_size = Vector2(46, 0)
+layout_mode = 2
+
+[node name="skill_1" type="Button" parent="skills/skills_window/row_1/VBoxContainer"]
+custom_minimum_size = Vector2(75, 72)
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+alignment = 0
+script = ExtResource("4_rktan")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="skills/skills_window/row_1"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="skill_2" type="Button" parent="skills/skills_window/row_1/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "
+
+"
+script = ExtResource("5_rys1y")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="skills/skills_window/row_1"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+
+[node name="skill_3" type="Button" parent="skills/skills_window/row_1/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+alignment = 0
+
+[node name="row_2" type="HBoxContainer" parent="skills/skills_window"]
+offset_left = -240.0
+offset_top = -57.0
+offset_right = 241.0
+offset_bottom = 67.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="skills/skills_window/row_2"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="items" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.035
+anchor_top = 0.031
+anchor_right = 0.035
+anchor_bottom = 0.031
+offset_left = 381.68
+offset_top = 325.912
+offset_right = 421.68
+offset_bottom = 365.912
+
+[node name="items_window" type="Sprite2D" parent="items"]
+visible = false
+position = Vector2(132, 231)
+scale = Vector2(0.572, 0.194)
+texture = ExtResource("4_dv7mv")
+
+[node name="row_1" type="HBoxContainer" parent="items/items_window"]
+offset_left = -241.0
+offset_top = -216.0
+offset_right = 235.0
+offset_bottom = -82.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="items/items_window/row_1"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="item_1" type="Button" parent="items/items_window/row_1/VBoxContainer"]
+custom_minimum_size = Vector2(0, 118)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+alignment = 0
+script = ExtResource("6_2ck1u")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="items/items_window/row_1"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="item_2" type="Button" parent="items/items_window/row_1/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 118)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "
+"
+alignment = 0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="items/items_window/row_1"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+
+[node name="item_3" type="Button" parent="items/items_window/row_1/VBoxContainer3"]
+custom_minimum_size = Vector2(0, 118)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "
+"
+alignment = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(67, 0)
+layout_mode = 0
+offset_left = 500.0
+offset_top = 530.0
+offset_right = 567.0
+offset_bottom = 631.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+self_modulate = Color(0.215686, 0.215686, 0.215686, 1)
+layout_mode = 2
+focus_neighbor_left = NodePath("attack")
+focus_neighbor_top = NodePath("items")
+
+[node name="attack" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_vha6y")
+text = "Attack"
+script = ExtResource("1_cp4ja")
+
+[node name="skills" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_k6ds0")
+text = "Skills"
+script = ExtResource("2_py1mr")
+
+[node name="items" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kvwxu")
+text = "Items"
+
+[connection signal="child_entered_tree" from="Area2D/collision_attack" to="MarginContainer/VBoxContainer/attack" method="_on_collision_attack_child_entered_tree"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/attack" to="MarginContainer/VBoxContainer/attack" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/skills" to="." method="_on_skills_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/items" to="." method="_on_items_pressed"]
