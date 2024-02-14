@@ -11,5 +11,11 @@ config_version=5
 [application]
 
 config/name="New Game Project"
+run/main_scene="res://GitGodot1/tile_map.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"
