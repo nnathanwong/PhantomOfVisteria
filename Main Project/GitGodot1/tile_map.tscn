@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://c88ui4nb17k3f"]
+[gd_scene load_steps=46 format=3 uid="uid://c88ui4nb17k3f"]
 
 [ext_resource type="Texture2D" uid="uid://jpyx3cojhooc" path="res://Solaria Demo Update 01.png" id="1_nlhb8"]
 [ext_resource type="PackedScene" uid="uid://s7fq05nkbdw" path="res://GitGodot1/enemy.tscn" id="2_2rs66"]
@@ -668,6 +668,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjjnk"]
+radius = 5.0
+height = 16.0
+
 [node name="TileMap" type="TileMap"]
 position = Vector2(545, 360)
 tile_set = SubResource("TileSet_xtj06")
@@ -685,6 +689,7 @@ layer_2/tile_data = PackedInt32Array(-1114132, 327681, 6, -1048596, 327681, 6, -
 position = Vector2(8, 105)
 
 [node name="player" type="CharacterBody2D" parent="."]
+z_index = 1
 script = ExtResource("3_xvtss")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
@@ -693,3 +698,5 @@ sprite_frames = SubResource("SpriteFrames_7x1rl")
 animation = &"Back Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(61, -26)
+shape = SubResource("CapsuleShape2D_kjjnk")
