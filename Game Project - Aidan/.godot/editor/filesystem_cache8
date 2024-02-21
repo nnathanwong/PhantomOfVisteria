@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1707879190
+icon.svg::CompressedTexture2D::2478264296722616943::1707315781::1707315793::1::::<><>::
+::res://art/::1707317124
+::res://art/characters/::1707317190
+player.png::CompressedTexture2D::1857078619276708620::1707317187::1707317190::1::::<><>::
+skeleton.png::CompressedTexture2D::4267319384090113320::1707317187::1707317190::1::::<><>::
+slime.png::CompressedTexture2D::6371839361964791474::1707317187::1707317190::1::::<><>::
+::res://scenes/::1707320955
+world.tscn::PackedScene::1932585940702244934::1707320955::0::1::::<><>::res://scripts/Player.gd<>uid://1pt2wpiwihia::::res://art/characters/player.png
+::res://scripts/::1707319235
+Player.gd::GDScript::-1::1707319235::0::1::::<>CharacterBody2D<>::
