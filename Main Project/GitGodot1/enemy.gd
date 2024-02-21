@@ -15,12 +15,7 @@ func _on_detection_body_entered(body):
 	player = body
 	detection = true
 
-<<<<<<< HEAD
-
-func _on_detection_body_exited(_body):
-=======
 func _on_detection_body_exited(body):
->>>>>>> 798ff615bdaf3b1ffdc7d9e6cdf85479180440f2
 	player = null
 	detection = false
 	
