@@ -16,6 +16,6 @@ func _on_detection_body_entered(body):
 	detection = true
 
 
-func _on_detection_body_exited(body):
+func _on_detection_body_exited(_body):
 	player = null
 	detection = false
