@@ -63,6 +63,7 @@ theme_override_font_sizes/font_size = 50
 text = "Items"
 
 [node name="skills_window" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(568, 559.641)
 scale = Vector2(0.81323, 0.335211)
 texture = ExtResource("1_0j317")
@@ -140,6 +141,7 @@ custom_minimum_size = Vector2(135, 100)
 layout_mode = 2
 
 [node name="items_window" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(568, 559.641)
 scale = Vector2(0.81323, 0.335211)
 texture = ExtResource("1_0j317")
