@@ -1,5 +1,16 @@
 extends Control
 
+var items_inventory = {
+	item_1 = 12,
+	item_2 = 7,
+	item_3 = 2,
+	item_4 = 17,
+	item_5 = 6,
+	item_6 = 9,
+	item_7 = 14,
+	item_8 = 30,
+	item_9 = 10,
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
