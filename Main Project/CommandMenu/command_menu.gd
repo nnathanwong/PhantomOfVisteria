@@ -21,6 +21,17 @@ func _ready():
 func _process(delta):
 	pass
 
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_BACKSPACE:
+			if $skills_window.visible == true:
+				$skills_window.visible = false
+				$command_ui.visible = true
+				$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
+			elif $items_window.visible == true:
+				$items_window.visible = false
+				$command_ui.visible = true
+				$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
 
 func _on_attack_pressed():
 	#FIXME: This is temporary. Make a script to access character stats
