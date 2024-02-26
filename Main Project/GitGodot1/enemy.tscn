@@ -104,6 +104,8 @@ animation = &"idle"
 frame_progress = 0.729172
 
 [node name="Detection" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="detection_radius" type="CollisionShape2D" parent="Detection"]
 z_index = 1
@@ -117,3 +119,4 @@ shape = SubResource("CircleShape2D_g1e2k")
 
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="child_entered_tree" from="collision_radius" to="." method="_on_collision_radius_child_entered_tree"]
