@@ -1,0 +1,239 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1mhplme274gt"]
+
+[ext_resource type="Script" path="res://CommandQueue/command_queue.gd" id="1_fv3yt"]
+[ext_resource type="Texture2D" uid="uid://ds3cqer8eyl86" path="res://CommandMenu/window.png.png" id="1_vo4fa"]
+[ext_resource type="Script" path="res://CommandQueue/first_chosen.gd" id="2_ofesh"]
+[ext_resource type="Script" path="res://CommandQueue/second_chosen.gd" id="3_li4xw"]
+[ext_resource type="Script" path="res://CommandQueue/third_chosen.gd" id="4_r0mr1"]
+[ext_resource type="Script" path="res://CommandQueue/fourth_chosen.gd" id="5_xf5k3"]
+
+[node name="command_queue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fv3yt")
+
+[node name="window" type="Sprite2D" parent="."]
+position = Vector2(501, 525.96)
+scale = Vector2(0.780545, 0.467168)
+texture = ExtResource("1_vo4fa")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="window"]
+offset_left = -238.0
+offset_top = -226.0
+offset_right = 245.0
+offset_bottom = 223.0
+theme_override_constants/separation = 73
+
+[node name="First" type="Label" parent="window/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "First"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="window/VBoxContainer/First"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 59.0
+offset_right = 482.0
+offset_bottom = 108.0
+
+[node name="ancel" type="Button" parent="window/VBoxContainer/First/HBoxContainer"]
+custom_minimum_size = Vector2(80, -10)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Ancel"
+
+[node name="lorane" type="Button" parent="window/VBoxContainer/First/HBoxContainer"]
+custom_minimum_size = Vector2(80, -10)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Lorane"
+
+[node name="raflahn" type="Button" parent="window/VBoxContainer/First/HBoxContainer"]
+custom_minimum_size = Vector2(80, -10)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Raflahn
+"
+
+[node name="younn" type="Button" parent="window/VBoxContainer/First/HBoxContainer"]
+custom_minimum_size = Vector2(80, -10)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Younn
+"
+
+[node name="first_chosen" type="Label" parent="window/VBoxContainer/First/HBoxContainer"]
+custom_minimum_size = Vector2(140, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+script = ExtResource("2_ofesh")
+
+[node name="Second" type="Label" parent="window/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Second
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="window/VBoxContainer/Second"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 59.0
+offset_right = 482.0
+offset_bottom = 108.0
+
+[node name="ancel" type="Button" parent="window/VBoxContainer/Second/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Ancel"
+
+[node name="lorane" type="Button" parent="window/VBoxContainer/Second/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Lorane"
+
+[node name="raflahn" type="Button" parent="window/VBoxContainer/Second/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Raflahn
+"
+
+[node name="younn" type="Button" parent="window/VBoxContainer/Second/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Younn
+"
+
+[node name="second_chosen" type="Label" parent="window/VBoxContainer/Second/HBoxContainer"]
+custom_minimum_size = Vector2(140, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+script = ExtResource("3_li4xw")
+
+[node name="Third" type="Label" parent="window/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Third
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="window/VBoxContainer/Third"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 59.0
+offset_right = 482.0
+offset_bottom = 108.0
+
+[node name="ancel" type="Button" parent="window/VBoxContainer/Third/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Ancel"
+
+[node name="lorane" type="Button" parent="window/VBoxContainer/Third/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Lorane"
+
+[node name="raflahn" type="Button" parent="window/VBoxContainer/Third/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Raflahn
+"
+
+[node name="younn" type="Button" parent="window/VBoxContainer/Third/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Younn
+"
+
+[node name="third_chosen" type="Label" parent="window/VBoxContainer/Third/HBoxContainer"]
+custom_minimum_size = Vector2(140, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+script = ExtResource("4_r0mr1")
+
+[node name="Fourth" type="Label" parent="window/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Fourth
+"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="window/VBoxContainer/Fourth"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 59.0
+offset_right = 482.0
+offset_bottom = 108.0
+
+[node name="ancel" type="Button" parent="window/VBoxContainer/Fourth/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Ancel"
+
+[node name="lorane" type="Button" parent="window/VBoxContainer/Fourth/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Lorane"
+
+[node name="raflahn" type="Button" parent="window/VBoxContainer/Fourth/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Raflahn
+"
+
+[node name="younn" type="Button" parent="window/VBoxContainer/Fourth/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Younn
+"
+
+[node name="fourth_chosen" type="Label" parent="window/VBoxContainer/Fourth/HBoxContainer"]
+custom_minimum_size = Vector2(140, 20)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+script = ExtResource("5_xf5k3")
+
+[node name="confirm" type="Button" parent="window"]
+visible = false
+offset_left = 33.0
+offset_top = 170.0
+offset_right = 233.0
+offset_bottom = 227.0
+theme_override_font_sizes/font_size = 35
+text = "EXECUTE"
+
+[connection signal="pressed" from="window/VBoxContainer/First/HBoxContainer/ancel" to="window/VBoxContainer/First/HBoxContainer/first_chosen" method="_on_ancel_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/First/HBoxContainer/lorane" to="window/VBoxContainer/First/HBoxContainer/first_chosen" method="_on_lorane_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/First/HBoxContainer/raflahn" to="window/VBoxContainer/First/HBoxContainer/first_chosen" method="_on_raflahn_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/First/HBoxContainer/younn" to="window/VBoxContainer/First/HBoxContainer/first_chosen" method="_on_younn_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/Second/HBoxContainer/ancel" to="window/VBoxContainer/Second/HBoxContainer/second_chosen" method="_on_ancel_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/Second/HBoxContainer/lorane" to="window/VBoxContainer/Second/HBoxContainer/second_chosen" method="_on_lorane_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/Second/HBoxContainer/raflahn" to="window/VBoxContainer/Second/HBoxContainer/second_chosen" method="_on_raflahn_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/Second/HBoxContainer/younn" to="window/VBoxContainer/Second/HBoxContainer/second_chosen" method="_on_younn_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/Third/HBoxContainer/ancel" to="window/VBoxContainer/Third/HBoxContainer/third_chosen" method="_on_ancel_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/Third/HBoxContainer/lorane" to="window/VBoxContainer/Third/HBoxContainer/third_chosen" method="_on_lorane_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/Third/HBoxContainer/raflahn" to="window/VBoxContainer/Third/HBoxContainer/third_chosen" method="_on_raflahn_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/Third/HBoxContainer/younn" to="window/VBoxContainer/Third/HBoxContainer/third_chosen" method="_on_younn_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/Fourth/HBoxContainer/ancel" to="window/VBoxContainer/Fourth/HBoxContainer/fourth_chosen" method="_on_ancel_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/Fourth/HBoxContainer/lorane" to="window/VBoxContainer/Fourth/HBoxContainer/fourth_chosen" method="_on_lorane_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/Fourth/HBoxContainer/raflahn" to="window/VBoxContainer/Fourth/HBoxContainer/fourth_chosen" method="_on_raflahn_pressed"]
+[connection signal="pressed" from="window/VBoxContainer/Fourth/HBoxContainer/younn" to="window/VBoxContainer/Fourth/HBoxContainer/fourth_chosen" method="_on_younn_pressed"]
+[connection signal="pressed" from="window/confirm" to="." method="_on_confirm_pressed"]
