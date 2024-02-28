@@ -38,6 +38,8 @@ func _on_attack_pressed():
 	# dictionary.
 	var character_strength = 5
 	var attack = character_strength * randi_range(6,10)
+	var next_turn = true
+	
 
 
 func _on_skills_pressed():
