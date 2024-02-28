@@ -449,7 +449,8 @@ z_index = 1
 position = Vector2(144, 178)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ws0j7")
-animation = &"idle"
+animation = &"walk"
+frame_progress = 0.500898
 flip_h = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="battle_map"]
@@ -481,7 +482,6 @@ scale = Vector2(2.59375, 2.38636)
 texture = ExtResource("5_fy7ya")
 
 [node name="command_menu" parent="." instance=ExtResource("5_fxm1f")]
-visible = false
 offset_left = 21.0
 offset_right = 21.0
 
@@ -494,3 +494,7 @@ offset_bottom = -18.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(600, 289)
+
+[connection signal="pressed" from="command_menu/command_ui/HBoxContainer/VBoxContainer/attack" to="." method="_on_attack_pressed"]
+
+[editable path="command_menu"]

@@ -20,3 +20,6 @@ func issue_commands():
 	#await( a signal from command_menu when someone issues a command)
 	
 	
+func _on_attack_pressed():
+	$battle_map/Slime.play("walk")
+	_ready()
