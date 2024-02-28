@@ -1,9 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://dt0i856vtcw0r"]
+[gd_scene load_steps=36 format=3 uid="uid://dt0i856vtcw0r"]
 
 [ext_resource type="Script" path="res://GitGodot1/battle_script.gd" id="1_6trwi"]
 [ext_resource type="Texture2D" uid="uid://csyqr2pf07wif" path="res://seasonal sample (summer).png" id="1_w08w2"]
 [ext_resource type="Texture2D" uid="uid://dqy2gkwvvap2c" path="res://sprites/characters/player.png" id="3_ea6ko"]
 [ext_resource type="Texture2D" uid="uid://bjn8lrr740fej" path="res://sprites/characters/slime.png" id="4_k14g7"]
+[ext_resource type="PackedScene" uid="uid://btr57clcd5mtv" path="res://CommandMenu/command_menu.tscn" id="5_fxm1f"]
+[ext_resource type="PackedScene" uid="uid://c1mhplme274gt" path="res://CommandQueue/command_queue.tscn" id="6_dwsah"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_o2mqn"]
 tile_data = PackedInt32Array(65536, 327680, 1, 131072, 327680, 2, 196608, 327680, 3, 262144, 327680, 4, 327680, 327680, 5, 393216, 327680, 6, 458752, 327680, 7, 1, 393216, 0, 65537, 393216, 1, 131073, 0, 2, 196609, 393216, 3, 262145, 393216, 4, 327681, 393216, 5, 393217, 393216, 6, 458753, 393216, 7, 2, 458752, 0, 65538, 0, 2, 131074, 0, 2, 196610, 0, 2, 262146, 458752, 4, 327682, 458752, 5, 393218, 458752, 6, 458754, 458752, 7, 3, 524288, 0, 65539, 0, 2, 131075, 0, 2, 196611, 0, 2, 262147, 524288, 4, 327683, 524288, 5, 393219, 524288, 6, 458755, 524288, 7, 4, 589824, 0, 65540, 589824, 1, 131076, 0, 2, 196612, 589824, 3, 262148, 589824, 4, 327684, 589824, 5, 393220, 589824, 6, 458756, 589824, 7, 65541, 655360, 1, 131077, 655360, 2, 196613, 655360, 3, 262149, 655360, 4, 327685, 655360, 5, 393221, 655360, 6, 458757, 655360, 7)
@@ -442,11 +444,30 @@ layer_1/tile_data = PackedInt32Array(-262177, 327680, 1, -196641, 327680, 2, -13
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="battle_map"]
 z_index = 1
 position = Vector2(-10, 160)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_seo2u")
 animation = &"Side Walk"
 
 [node name="Slime" type="AnimatedSprite2D" parent="battle_map"]
 z_index = 1
-position = Vector2(136, 163)
+position = Vector2(144, 178)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ws0j7")
 animation = &"idle"
+flip_h = true
+
+[node name="command_menu" parent="." instance=ExtResource("5_fxm1f")]
+offset_left = 501.0
+offset_top = 2.0
+offset_right = 501.0
+offset_bottom = 2.0
+
+[node name="command_queue" parent="." instance=ExtResource("6_dwsah")]
+offset_left = -304.0
+offset_top = 2.0
+offset_right = -304.0
+offset_bottom = 2.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(585, 239)
+zoom = Vector2(3, 3)

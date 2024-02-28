@@ -117,6 +117,8 @@ z_index = 1
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_g1e2k")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
 [connection signal="body_entered" from="Detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
 [connection signal="child_entered_tree" from="collision_radius" to="." method="_on_collision_radius_child_entered_tree"]

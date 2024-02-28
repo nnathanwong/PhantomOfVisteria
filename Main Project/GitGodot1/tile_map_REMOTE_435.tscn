@@ -675,6 +675,7 @@ height = 16.0
 [node name="TileMap" type="TileMap"]
 z_index = 1
 position = Vector2(545, 360)
+scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_xtj06")
 format = 2
 layer_0/name = "Floor"
