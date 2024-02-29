@@ -23,4 +23,10 @@ func select():
 	$battle_map/enemies/Slime/selection.visible = true
 	$battle_map/enemies/Slime/selection.grab_focus()
 	
-
+# Comment for Dewei: Not sure why but this breaks the attack script
+# I set in place to deal damage to the enemy. We can figure this out later.
+'''
+func _on_attack_pressed():
+	$battle_map/Slime.play("walk")
+	_ready()
+'''
