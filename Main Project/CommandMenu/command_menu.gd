@@ -1,4 +1,6 @@
 extends Control
+signal selection_state
+
 
 var items_inventory = {
 	item_1 = 12,
@@ -19,7 +21,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	signals.nextTurn.connect(next_turn)
 
 func _unhandled_input(event):
 	if event is InputEventKey:
@@ -36,20 +38,20 @@ func _unhandled_input(event):
 func _on_attack_pressed():
 	#FIXME: This is temporary. Make a script to access character stats
 	# dictionary.
-	var character_strength = 5
-	var attack = character_strength * randi_range(6,10)
-	var next_turn = true
-	
-
+	signals.selectionState.emit()
 
 func _on_skills_pressed():
 	$skills_window.visible = true
 	$command_ui.visible = false
 	$skills_window/HBoxContainer/column_1/skill_1.grab_focus()
-	
-
 
 func _on_items_pressed():
 	$items_window.visible = true
 	$command_ui.visible = false
 	$items_window/HBoxContainer/column_1/item_1.grab_focus()
+
+func next_turn():
+	$command_ui.visible = false
+	await get_tree().create_timer(1.5).timeout
+	$command_ui.visible = true
+	$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
