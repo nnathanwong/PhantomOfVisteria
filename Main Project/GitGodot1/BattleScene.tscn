@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dt0i856vtcw0r"]
+[gd_scene load_steps=43 format=3 uid="uid://dt0i856vtcw0r"]
 
 [ext_resource type="Script" path="res://GitGodot1/battle_script.gd" id="1_6trwi"]
 [ext_resource type="Texture2D" uid="uid://csyqr2pf07wif" path="res://seasonal sample (summer).png" id="1_w08w2"]
@@ -434,6 +434,45 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_eid31"]
+resource_name = "hurt_animation"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slime/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.541176, 0.137255, 0.0588235, 0.521569), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wsusp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slime/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.956863, 0.352941, 0.239216, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6uhwh"]
+_data = {
+"RESET": SubResource("Animation_wsusp"),
+"hurt_animation": SubResource("Animation_eid31")
+}
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_6trwi")
 
@@ -447,7 +486,7 @@ layer_1/tile_data = PackedInt32Array(-262177, 327680, 1, -196641, 327680, 2, -13
 
 [node name="players" type="VBoxContainer" parent="battle_map"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="battle_map/players"]
+[node name="Player" type="AnimatedSprite2D" parent="battle_map/players"]
 z_index = 1
 position = Vector2(-8, 113)
 scale = Vector2(2, 2)
@@ -469,15 +508,6 @@ position = Vector2(-3, 302)
 scale = Vector2(2.59375, 2.38636)
 texture = ExtResource("5_fy7ya")
 
-[node name="Slime" type="AnimatedSprite2D" parent="battle_map"]
-z_index = 1
-position = Vector2(144, 178)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_ws0j7")
-animation = &"walk"
-frame_progress = 0.500898
-flip_h = true
-
 [node name="VBoxContainer" type="VBoxContainer" parent="battle_map"]
 offset_left = 3.0
 offset_top = -14.0
@@ -489,17 +519,37 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Slime" type="AnimatedSprite2D" parent="battle_map/enemies"]
+clip_children = 2
 z_index = 1
-position = Vector2(144, 178)
+position = Vector2(157, 178)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ws0j7")
 animation = &"idle"
+frame_progress = 0.692386
 flip_h = true
 script = ExtResource("8_ikcxi")
 
+[node name="ColorRect" type="ColorRect" parent="battle_map/enemies/Slime"]
+offset_left = -19.5
+offset_top = -18.5
+offset_right = 20.5
+offset_bottom = 21.5
+color = Color(0.956863, 0.352941, 0.239216, 0)
+
 [node name="selection" type="Button" parent="battle_map/enemies/Slime"]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 4.0
+offset_bottom = 6.0
+
+[node name="hurteffect" type="AnimationPlayer" parent="battle_map/enemies/Slime"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_6uhwh")
+}
+
+[node name="damage_timer" type="Timer" parent="battle_map/enemies/Slime"]
+one_shot = true
 
 [node name="command_menu" parent="." instance=ExtResource("5_fxm1f")]
 offset_left = 21.0
