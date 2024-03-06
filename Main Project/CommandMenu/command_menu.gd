@@ -1,6 +1,4 @@
 extends Control
-signal selection_state
-
 
 var items_inventory = {
 	item_1 = 12,

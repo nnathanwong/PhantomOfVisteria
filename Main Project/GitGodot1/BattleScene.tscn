@@ -470,6 +470,7 @@ scale = Vector2(2.59375, 2.38636)
 texture = ExtResource("5_fy7ya")
 
 [node name="Slime" type="AnimatedSprite2D" parent="battle_map"]
+visible = false
 z_index = 1
 position = Vector2(144, 178)
 scale = Vector2(2, 2)
