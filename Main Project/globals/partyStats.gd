@@ -35,18 +35,27 @@ class Ancel:
 	#Damage inflicted on Ancel
 	func takeDamage(hp, damage):
 		hp -= damage
+		if hp < 0:
+			hp = 0
 		return hp
 	#Healing
 	func restoreHP(hp, heal):
 		hp += heal
+		if hp > maxHP:
+			hp = maxHP
 		return hp
 	#Spending SP
 	func spSpend(sp, cost):
+		if cost > sp:
+			print("Cost greater than SP")
+			return
 		sp -= cost
 		return sp
 	#Restoring SP
 	func restoreSP(sp, restore):
 		sp += restore
+		if sp > maxSP:
+			sp = maxSP
 		return sp
 	
 	#Levelling stats by REPLACING max stats with new max
@@ -99,18 +108,27 @@ class Lorane:
 	#Damage inflicted
 	func takeDamage(hp, damage):
 		hp -= damage
+		if hp < 0:
+			hp = 0
 		return hp
 	#Healing
 	func restoreHP(hp, heal):
 		hp += heal
+		if hp > maxHP:
+			hp = maxHP
 		return hp
 	#Spending SP
 	func spSpend(sp, cost):
+		if cost > sp:
+			print("Cost greater than SP")
+			return
 		sp -= cost
 		return sp
 	#Restoring SP
 	func restoreSP(sp, restore):
 		sp += restore
+		if sp > maxSP:
+			sp = maxSP
 		return sp
 		
 	#Levelling stats by REPLACING max stats with new max
@@ -163,18 +181,27 @@ class Raflahn:
 	#Damage inflicted
 	func takeDamage(hp, damage):
 		hp -= damage
+		if hp < 0:
+			hp = 0
 		return hp
 	#Healing
 	func restoreHP(hp, heal):
 		hp += heal
+		if hp > maxHP:
+			hp = maxHP
 		return hp
 	#Spending SP
 	func spSpend(sp, cost):
+		if cost > sp:
+			print("Cost greater than SP")
+			return
 		sp -= cost
 		return sp
 	#Restoring SP
 	func restoreSP(sp, restore):
 		sp += restore
+		if sp > maxSP:
+			sp = maxSP
 		return sp
 		
 	#Levelling stats by REPLACING max stats with new max
@@ -227,18 +254,27 @@ class Younn:
 	#Damage inflicted
 	func takeDamage(hp, damage):
 		hp -= damage
+		if hp < 0:
+			hp = 0
 		return hp
 	#Healing
 	func restoreHP(hp, heal):
 		hp += heal
+		if hp > maxHP:
+			hp = maxHP
 		return hp
 	#Spending SP
 	func spSpend(sp, cost):
+		if cost > sp:
+			print("Cost greater than SP")
+			return
 		sp -= cost
 		return sp
 	#Restoring SP
 	func restoreSP(sp, restore):
 		sp += restore
+		if sp > maxSP:
+			sp = maxSP
 		return sp
 		
 	#Levelling stats by REPLACING max stats with new max
