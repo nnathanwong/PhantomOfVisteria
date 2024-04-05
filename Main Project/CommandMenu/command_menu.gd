@@ -16,7 +16,6 @@ var items_inventory = {
 func _ready():
 	$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	signals.nextTurn.connect(next_turn)

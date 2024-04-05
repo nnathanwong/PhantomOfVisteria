@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 signals="*res://globals/signals.gd"
 
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Enemies"
+2d_physics/layer_3="Player"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

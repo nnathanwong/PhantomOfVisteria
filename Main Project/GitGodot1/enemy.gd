@@ -1,24 +1,32 @@
 extends CharacterBody2D
 
-var speed = 10
-var player = null
+var speed = 90
 var detection = false
+@onready var playerpos = get_node("../player")
 
-func _physics_process(_delta):
+func _physics_process(delta):
+	#velocity = Vector2.ZERO
 	if detection:
-		position += (player.position - position).normalized() * speed
+		var direction = (playerpos.global_position - self.global_position).normalized()
+		velocity = direction * speed
 		$Slime.play("walk")
-		look_at(player.position)
+		if (playerpos.position.x - position.x) < 0:
+			$Slime.flip_h = true
+		else:
+			$Slime.flip_h = false
 	else:
+		velocity = Vector2.ZERO
 		$Slime.play("idle")
-	
+	move_and_slide()
+
 func _on_detection_body_entered(body):
-	player = body
-	detection = true
+	if body.name == "player":
+		detection = true
 
 func _on_detection_body_exited(body):
-	player = null
-	detection = false
+	if body.name == "player":
+		detection = false
 
-func _on_collision_radius_child_entered_tree(node):
-	get_tree().change_scene_to_file("res://GitGodot1/BattleScene.tscn")
+func _on_collision_body_entered(body):
+	if body.name == "player":
+		get_tree().change_scene_to_file("res://GitGodot1/BattleScene.tscn")
