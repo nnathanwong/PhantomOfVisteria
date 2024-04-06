@@ -1,8 +1,9 @@
-[gd_scene load_steps=47 format=3 uid="uid://dt0i856vtcw0r"]
+[gd_scene load_steps=48 format=3 uid="uid://dt0i856vtcw0r"]
 
 [ext_resource type="Script" path="res://GitGodot1/battle_script.gd" id="1_6trwi"]
 [ext_resource type="Texture2D" uid="uid://csyqr2pf07wif" path="res://seasonal sample (summer).png" id="1_w08w2"]
 [ext_resource type="Texture2D" uid="uid://dqy2gkwvvap2c" path="res://sprites/characters/player.png" id="3_ea6ko"]
+[ext_resource type="Script" path="res://GitGodot1/ancelBattle.gd" id="4_b1m2b"]
 [ext_resource type="Texture2D" uid="uid://bjn8lrr740fej" path="res://sprites/characters/slime.png" id="4_k14g7"]
 [ext_resource type="PackedScene" uid="uid://btr57clcd5mtv" path="res://CommandMenu/command_menu.tscn" id="5_fxm1f"]
 [ext_resource type="Texture2D" uid="uid://dq4gk6rydyfok" path="res://sprites/characters/younn/right/9ce08141-aef8-4e6a-b4b9-068c78767128.png" id="5_fy7ya"]
@@ -516,12 +517,13 @@ layer_1/tile_data = PackedInt32Array(-262177, 327680, 1, -196641, 327680, 2, -13
 
 [node name="players" type="VBoxContainer" parent="battle_map"]
 
-[node name="Player" type="AnimatedSprite2D" parent="battle_map/players"]
+[node name="ancel" type="AnimatedSprite2D" parent="battle_map/players"]
 z_index = 1
 position = Vector2(-8, 113)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_seo2u")
 animation = &"Side Walk"
+script = ExtResource("4_b1m2b")
 
 [node name="lorane" type="Sprite2D" parent="battle_map/players"]
 position = Vector2(-5.25, 182)
@@ -537,6 +539,16 @@ texture = ExtResource("6_feacn")
 position = Vector2(-3, 302)
 scale = Vector2(2.59375, 2.38636)
 texture = ExtResource("5_fy7ya")
+
+[node name="Slime" type="AnimatedSprite2D" parent="battle_map"]
+visible = false
+z_index = 1
+position = Vector2(144, 178)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ws0j7")
+animation = &"walk"
+frame_progress = 0.500898
+flip_h = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="battle_map"]
 offset_left = 3.0

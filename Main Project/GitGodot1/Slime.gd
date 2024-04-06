@@ -13,6 +13,7 @@ func _init():
 func _process(delta):
 	if HP <= 0:
 		self.queue_free()
+		$"../../../command_menu".queue_free()
 
 
 func _on_selection_pressed():
