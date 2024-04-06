@@ -540,16 +540,6 @@ position = Vector2(-3, 302)
 scale = Vector2(2.59375, 2.38636)
 texture = ExtResource("5_fy7ya")
 
-[node name="Slime" type="AnimatedSprite2D" parent="battle_map"]
-visible = false
-z_index = 1
-position = Vector2(144, 178)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_ws0j7")
-animation = &"walk"
-frame_progress = 0.500898
-flip_h = true
-
 [node name="VBoxContainer" type="VBoxContainer" parent="battle_map"]
 offset_left = 3.0
 offset_top = -14.0
@@ -638,7 +628,9 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 1.0
+offset_top = 0.0
 offset_right = 21.0
+offset_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 
@@ -646,12 +638,34 @@ grow_vertical = 1
 z_index = 1
 position = Vector2(86, 519)
 
+[node name="skills_window" parent="command_menu" index="1"]
+visible = true
+z_index = 1
+position = Vector2(214.121, 348.91)
+scale = Vector2(0.835034, 0.344199)
+
+[node name="items_window" parent="command_menu" index="2"]
+visible = true
+z_index = 1
+position = Vector2(929, 364)
+scale = Vector2(0.577821, 0.397309)
+
+[node name="items_extended" parent="command_menu/items_window" index="0"]
+position = Vector2(274.133, -1.8388)
+
+[node name="inventory_3" parent="command_menu/items_window" index="4"]
+offset_left = 255.287
+offset_top = -253.472
+offset_right = 289.287
+offset_bottom = 246.528
+
 [node name="command_queue" parent="." instance=ExtResource("6_dwsah")]
 visible = false
-offset_left = 89.0
-offset_top = -18.0
-offset_right = 89.0
-offset_bottom = -18.0
+z_index = 1
+offset_left = -285.0
+offset_top = -210.0
+offset_right = -285.0
+offset_bottom = -210.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 289)
