@@ -622,8 +622,13 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_3bunm")
 value = 100.0
 
 [node name="command_menu" parent="." instance=ExtResource("5_fxm1f")]
-offset_left = 21.0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1.0
 offset_right = 21.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="command_ui" parent="command_menu" index="0"]
 z_index = 1
