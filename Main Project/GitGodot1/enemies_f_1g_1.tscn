@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8vyjblwmaqdy"]
+
+[ext_resource type="PackedScene" uid="uid://84ibbx1jtmqf" path="res://GitGodot1/slime_battle.tscn" id="1_7oik8"]
+
+[node name="enemiesF1G1" type="Node2D"]
+
+[node name="slimeBattle" parent="." instance=ExtResource("1_7oik8")]
+
+[node name="slimeBattle2" parent="." instance=ExtResource("1_7oik8")]
+
+[node name="slimeBattle3" parent="." instance=ExtResource("1_7oik8")]
+
+[node name="slimeBattle4" parent="." instance=ExtResource("1_7oik8")]

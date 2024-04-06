@@ -23,3 +23,4 @@ func _process(delta):
 func select():
 	$battle_map/enemies/Slime/selection.visible = true
 	$battle_map/enemies/Slime/selection.grab_focus()
+	# MAKE A COUNT THAT GOES UP TO 4 TO EXECUTE COMMANDS
