@@ -18,4 +18,4 @@ func _process(delta):
 	var strength = ancelStats.strength
 	var magic = ancelStats.magic
 	#FOR ACCEPTANCE CRITERIA TESTING PURPOSES
-	print(maxHP, hp, maxSP, sp, defense, strength, magic)
+	#print(maxHP, hp, maxSP, sp, defense, strength, magic)

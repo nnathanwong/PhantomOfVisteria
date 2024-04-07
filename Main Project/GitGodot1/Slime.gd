@@ -16,14 +16,17 @@ func _init():
 	HP = 30
 	physical_defense = 5
 	magic_defense = 5
-	
-func _process(delta):
+
+#moved to _on_selection_pressed(), will keep if anyone wants to view it first
+'''func _process(delta):
 	if HP <= 0:
 		damaged.start()
 		hurt.play("hurt_animation")
-		await(hurt)
+		await damaged.timeout
+		hurt.play("RESET")
+	if hurt.current_animation == "RESET":
 		self.queue_free()
-		$"../../../command_menu".queue_free()
+		$"../../../command_menu".queue_free() '''
 
 
 func _on_selection_pressed():
@@ -37,5 +40,8 @@ func _on_selection_pressed():
 	damaged.start()
 	await damaged.timeout
 	hurt.play("RESET")
+	if HP <= 0:
+		self.queue_free()
+		$"../../../command_menu".queue_free()
 	
 	signals.nextTurn.emit()
