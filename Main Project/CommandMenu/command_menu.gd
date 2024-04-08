@@ -11,6 +11,8 @@ var items_inventory = {
 	item_8 = 30,
 	item_9 = 10,
 }
+var currentTurn
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +21,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	signals.nextTurn.connect(next_turn)
+	
+func _init():
+	currentTurn = "Ancel"
 
 func _unhandled_input(event):
 	if event is InputEventKey:
@@ -33,8 +38,6 @@ func _unhandled_input(event):
 				$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
 
 func _on_attack_pressed():
-	#FIXME: This is temporary. Make a script to access character stats
-	# dictionary.
 	signals.selectionState.emit()
 
 func _on_skills_pressed():

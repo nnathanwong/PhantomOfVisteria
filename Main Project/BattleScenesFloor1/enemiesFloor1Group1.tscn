@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8vyjblwmaqdy"]
+
+[ext_resource type="Script" path="res://GitGodot1/enemiesFloor1Group1.gd" id="1_e2y76"]
+[ext_resource type="PackedScene" uid="uid://84ibbx1jtmqf" path="res://GitGodot1/slime_battle.tscn" id="2_g4kd5"]
+
+[node name="enemiesF1G1" type="Node2D"]
+script = ExtResource("1_e2y76")
+
+[node name="slimeBattle" parent="." instance=ExtResource("2_g4kd5")]
+
+[node name="slimeBattle2" parent="." instance=ExtResource("2_g4kd5")]
+
+[node name="slimeBattle3" parent="." instance=ExtResource("2_g4kd5")]
+
+[node name="slimeBattle4" parent="." instance=ExtResource("2_g4kd5")]

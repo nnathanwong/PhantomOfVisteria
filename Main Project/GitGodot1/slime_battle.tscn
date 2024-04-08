@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://84ibbx1jtmqf"]
+[gd_scene load_steps=19 format=3 uid="uid://84ibbx1jtmqf"]
 
+[ext_resource type="Script" path="res://GitGodot1/focus.gd" id="1_sva4v"]
 [ext_resource type="Texture2D" uid="uid://bjn8lrr740fej" path="res://sprites/characters/slime.png" id="1_xjnrk"]
 [ext_resource type="Script" path="res://GitGodot1/Slime.gd" id="2_1wmxr"]
+[ext_resource type="Texture2D" uid="uid://jidsxe3ors0h" path="res://FFVIGraphics/Cursors/001-Cursor01.png" id="3_mmyti"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g3fs0"]
 atlas = ExtResource("1_xjnrk")
@@ -126,6 +128,7 @@ _data = {
 }
 
 [node name="slimeBattle" type="CharacterBody2D"]
+script = ExtResource("1_sva4v")
 
 [node name="Slime" type="AnimatedSprite2D" parent="."]
 clip_children = 2
@@ -161,5 +164,11 @@ libraries = {
 
 [node name="damage_timer" type="Timer" parent="Slime"]
 one_shot = true
+
+[node name="cursor" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-31, 1)
+scale = Vector2(0.71875, 0.75)
+texture = ExtResource("3_mmyti")
 
 [connection signal="pressed" from="Slime/selection" to="Slime" method="_on_selection_pressed"]

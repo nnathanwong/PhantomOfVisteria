@@ -19,7 +19,7 @@ grow_vertical = 2
 script = ExtResource("1_dfgtb")
 
 [node name="command_ui" type="Sprite2D" parent="."]
-position = Vector2(578, 559.75)
+position = Vector2(3, 5)
 scale = Vector2(0.284047, 0.335644)
 texture = ExtResource("1_0j317")
 
@@ -64,7 +64,7 @@ text = "Items"
 
 [node name="skills_window" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(450, 560)
+position = Vector2(140, 4.99988)
 scale = Vector2(0.81323, 0.335211)
 texture = ExtResource("1_0j317")
 script = ExtResource("3_7ujhi")
@@ -209,7 +209,7 @@ horizontal_alignment = 1
 
 [node name="items_window" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(451, 561)
+position = Vector2(141, 5.99994)
 scale = Vector2(0.81323, 0.335211)
 texture = ExtResource("1_0j317")
 script = ExtResource("4_aabcb")
