@@ -5,7 +5,8 @@ var physical_defense
 var magic_defense
 var damage_taken
 var stats = preload("res://globals/partyStats.gd")
-var skills = preload("res://globals/skillStats.gd") #make script for skill stats
+var skills = preload("res://globals/attackStats.gd") #make script for skill stats
+
 @onready var hurt = $hurteffect
 @onready var damaged = $damage_timer
 @onready var cursor = $"../cursor"
@@ -45,8 +46,6 @@ func _on_selection_pressed():
 	damaged.start()
 	await damaged.timeout
 	hurt.play("RESET")
-	if HP <= 0:
-		self.queue_free()
-		$"../../../command_menu".queue_free()
+		
 	
 	signals.nextTurn.emit()

@@ -1,7 +1,13 @@
 extends CharacterBody2D
 
 @onready var cursor = $cursor
-@onready var button =  $Slime/selection
+@onready var button = self.get_child(0).get_child(1)
+
+
+func _ready():
+	var enemyNode = self.name
+	var childNode = self.get_child(0)
+	childNode.play("idle")
 
 func focus():
 	cursor.show()
