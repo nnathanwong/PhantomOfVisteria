@@ -7,6 +7,7 @@ extends CharacterBody2D
 func _ready():
 	var enemyNode = self.name
 	var childNode = self.get_child(0)
+	print(button)
 	childNode.play("idle")
 
 func focus():

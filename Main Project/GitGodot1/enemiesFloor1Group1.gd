@@ -22,7 +22,8 @@ func _process(delta):
 	# self queue free them here when HP is below 0 
 	signals.selectionState.connect(initialFocus)
 	#for i in enemies.size():
-		
+	
+	#FIXME: THIS SHOWS NO MATTER WHAT
 	if Input.is_action_just_pressed("ui_up"):
 		if index > 0:
 			index -= 1
