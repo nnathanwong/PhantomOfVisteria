@@ -4,7 +4,7 @@ class_name PartyStats
 
 class Ancel:
 	# Max stats
-	var maxHP : int = 200
+	var maxHP : int = 100
 	var maxSP : int = 10
 	
 	# Current stats
