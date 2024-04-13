@@ -1,42 +1,40 @@
-extends AnimatedSprite2D
+extends CharacterBody2D
 
 var HP
 var physical_defense
 var magic_defense
 var damage_taken
-var damage = 5
+var damage
 var stats = preload("res://globals/partyStats.gd")
 var skills = preload("res://globals/attackStats.gd") #make script for skill stats
 
 @onready var hurt = $hurteffect
 @onready var damaged = $damage_timer
 @onready var cursor = $"../cursor"
-@onready var player = $battle_map/players/ancel
+@onready var player = $"../../players/ancel"
 var enemy_turn = false
+var current_position = self.global_position
 
-func _ready():
+func _ready(): #default animation
 	$Slime.play("idle")
 
-func _init():
+func _init(): #slime's stats
 	HP = 120
 	physical_defense = 5
 	magic_defense = 5
+	damage = 5
 
-#moved to _on_selection_pressed(), will keep if anyone wants to view it first
-func _process(delta):
+func _process(delta): 
 	#velocity = Vector2.ZERO
-	var damage_done = damage
-	var curr_position = self.global_position
-	var direction = (player.global_position - curr_position).normalized()
-	if enemy_turn:
-		velocity = direction * 10
+	var damage_done = damage #slime's damage
+	var direction = (player.get_parent().global_position - self.global_position).normalized() #Target's position - slime's position = path towards player
+	if enemy_turn: #slime's turn to fight
+		velocity = direction * 10 #walk to target's location
 		$Slime.play("walk")
-		stats.Ancel.takeDamage(self, damage_done)
-		velocity = curr_position
+		stats.Ancel.takeDamage(self, damage_done) #deals damage to Ancel
 		enemy_turn = false
-	else:
-		var direction_back = (curr_position - self.global_position).normalized()
-		velocity = direction_back * 10
+		var direction_back = (current_position - self.global_position).normalized()
+		velocity = direction_back * 10 #walks back to starting position
 		$Slime.play("walk")
 	move_and_slide()
 
