@@ -7,6 +7,7 @@ extends Node2D
 
 var enemies: Array = []
 var index: int = 0
+var selectionState : bool = false
 
 
 func _ready():
@@ -16,6 +17,7 @@ func _ready():
 
 func initialFocus():
 	enemies[0].focus()
+	selectionState = true
 
 func _process(delta):
 	# Note to self: I'm trying to get all the slime's HP in here and 
@@ -24,14 +26,15 @@ func _process(delta):
 	#for i in enemies.size():
 	
 	#FIXME: THIS SHOWS NO MATTER WHAT
-	if Input.is_action_just_pressed("ui_up"):
-		if index > 0:
-			index -= 1
-			switchFocus(index, index+1)
-	elif Input.is_action_just_pressed("ui_down"):
-		if index < enemies.size() - 1:
-			index +=1
-			switchFocus(index, index-1)
+	if selectionState == true:
+		if Input.is_action_just_pressed("ui_up"):
+			if index > 0:
+				index -= 1
+				switchFocus(index, index+1)
+		elif Input.is_action_just_pressed("ui_down"):
+			if index < enemies.size() - 1:
+				index +=1
+				switchFocus(index, index-1)
 
 func switchFocus(new, old):
 	enemies[new].focus()

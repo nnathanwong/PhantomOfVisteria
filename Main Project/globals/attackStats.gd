@@ -12,6 +12,10 @@ class Attacks:
 		var lorane = multiplier.Lorane.strength + normal_damage
 		var raflahn = multiplier.Raflahn.strength + normal_damage
 		var younn = multiplier.Younn.strength + normal_damage
+		print(ancel)
+		print(lorane)
+		print(raflahn)
+		print(younn)
 
 	func magic():
 		var ancel = multiplier.Ancel.magic + magic_damage
