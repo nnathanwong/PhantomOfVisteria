@@ -1365,6 +1365,10 @@ collision_layer = 2
 collision_mask = 3
 collision_priority = 3.0
 
+[node name="Slime" parent="enemy" index="0"]
+animation = &"walk"
+frame_progress = 0.0
+
 [node name="Detection" parent="enemy" index="1"]
 light_mask = 2
 collision_mask = 2

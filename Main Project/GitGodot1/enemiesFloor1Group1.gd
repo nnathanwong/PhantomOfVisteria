@@ -1,6 +1,6 @@
 extends Node2D
 
-#Title: Enemy Position Source Code
+#Title: Enemy Positioning Source Code
 #Author: 16BitDev
 #Date: 2023
 #Availability: https://www.youtube.com/watch?v=HEexLmt7enc&t=437s
@@ -18,7 +18,12 @@ func initialFocus():
 	enemies[0].focus()
 
 func _process(delta):
+	# Note to self: I'm trying to get all the slime's HP in here and 
+	# self queue free them here when HP is below 0 
 	signals.selectionState.connect(initialFocus)
+	#for i in enemies.size():
+	
+	#FIXME: THIS SHOWS NO MATTER WHAT
 	if Input.is_action_just_pressed("ui_up"):
 		if index > 0:
 			index -= 1

@@ -1,8 +1,8 @@
 extends Resource
 
-class_name skillStats
+class_name attackStats
 
-class attacks:
+class Attacks:
 	var multiplier = preload("res://globals/partyStats.gd")
 	var normal_damage : int = 5
 	var magic_damage : int = 5 

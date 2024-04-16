@@ -440,7 +440,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Slime/ColorRect:color")
+tracks/0/path = NodePath("SlimeBody/Slime/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -458,7 +458,7 @@ step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Slime/ColorRect:color")
+tracks/0/path = NodePath("SlimeBody/Slime/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -474,16 +474,6 @@ _data = {
 "hurt_animation": SubResource("Animation_eid31")
 }
 
-[sub_resource type="Theme" id="Theme_svhi6"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugt74"]
-bg_color = Color(0.109804, 0.976471, 0, 1)
-
-[sub_resource type="GDScript" id="GDScript_d5yn4"]
-script/source = "extends ProgressBar
-
-"
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sla01"]
 bg_color = Color(0.576471, 0.6, 0.6, 0)
 border_width_left = 3
@@ -498,6 +488,16 @@ border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
 border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_svhi6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugt74"]
+bg_color = Color(0.109804, 0.976471, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_d5yn4"]
+script/source = "extends ProgressBar
+
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcfmu"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -560,7 +560,10 @@ offset_bottom = 351.0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Slime" type="AnimatedSprite2D" parent="battle_map/enemies"]
+[node name="SlimeBody" type="CharacterBody2D" parent="battle_map/enemies"]
+script = ExtResource("8_ikcxi")
+
+[node name="Slime" type="AnimatedSprite2D" parent="battle_map/enemies/SlimeBody"]
 clip_children = 2
 z_index = 1
 position = Vector2(157, 178)
@@ -569,41 +572,28 @@ sprite_frames = SubResource("SpriteFrames_ws0j7")
 animation = &"idle"
 frame_progress = 0.692386
 flip_h = true
-script = ExtResource("8_ikcxi")
 
-[node name="ColorRect" type="ColorRect" parent="battle_map/enemies/Slime"]
+[node name="ColorRect" type="ColorRect" parent="battle_map/enemies/SlimeBody/Slime"]
 offset_left = -19.5
 offset_top = -18.5
 offset_right = 20.5
 offset_bottom = 21.5
 color = Color(0.956863, 0.352941, 0.239216, 0)
 
-[node name="selection" type="Button" parent="battle_map/enemies/Slime"]
+[node name="selection" type="Button" parent="battle_map/enemies/SlimeBody/Slime"]
 offset_left = -4.0
 offset_top = -2.0
 offset_right = 4.0
 offset_bottom = 6.0
 
-[node name="hurteffect" type="AnimationPlayer" parent="battle_map/enemies/Slime"]
-root_node = NodePath("../..")
+[node name="hurteffect" type="AnimationPlayer" parent="battle_map/enemies/SlimeBody/Slime"]
+root_node = NodePath("../../..")
 libraries = {
 "": SubResource("AnimationLibrary_6uhwh")
 }
 
-[node name="damage_timer" type="Timer" parent="battle_map/enemies/Slime"]
+[node name="damage_timer" type="Timer" parent="battle_map/enemies/SlimeBody/Slime"]
 one_shot = true
-
-[node name="slimeHealth" type="ProgressBar" parent="battle_map/enemies/Slime"]
-z_index = 2
-custom_minimum_size = Vector2(0, 0.001)
-offset_left = -43.0
-offset_top = -42.0
-offset_right = 41.0
-offset_bottom = -19.0
-theme = SubResource("Theme_svhi6")
-theme_override_styles/background = SubResource("StyleBoxFlat_ugt74")
-value = 100.0
-script = SubResource("GDScript_d5yn4")
 
 [node name="Party1Healthbar" type="ProgressBar" parent="battle_map"]
 z_index = 1
@@ -644,6 +634,18 @@ offset_bottom = 445.0
 theme_override_styles/background = SubResource("StyleBoxFlat_sla01")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3bunm")
 value = 100.0
+
+[node name="battle_map_enemies_Slime#slimeHealth" type="ProgressBar" parent="."]
+z_index = 2
+custom_minimum_size = Vector2(0, 0.001)
+offset_left = -43.0
+offset_top = -42.0
+offset_right = 41.0
+offset_bottom = -19.0
+theme = SubResource("Theme_svhi6")
+theme_override_styles/background = SubResource("StyleBoxFlat_ugt74")
+value = 100.0
+script = SubResource("GDScript_d5yn4")
 
 [node name="command_menu" parent="." instance=ExtResource("5_fxm1f")]
 anchors_preset = 0
@@ -774,7 +776,7 @@ text = "Slime"
 alignment = 1
 flat = true
 
-[connection signal="pressed" from="battle_map/enemies/Slime/selection" to="battle_map/enemies/Slime" method="_on_selection_pressed"]
+[connection signal="pressed" from="battle_map/enemies/SlimeBody/Slime/selection" to="battle_map/enemies/SlimeBody/Slime" method="_on_selection_pressed"]
 [connection signal="pressed" from="command_menu/command_ui/HBoxContainer/VBoxContainer/attack" to="." method="_on_attack_pressed"]
 
 [editable path="command_menu"]

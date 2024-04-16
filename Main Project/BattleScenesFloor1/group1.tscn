@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvm775q85pdrb"]
+[gd_scene load_steps=7 format=3 uid="uid://dvm775q85pdrb"]
 
 [ext_resource type="PackedScene" uid="uid://btr57clcd5mtv" path="res://CommandMenu/command_menu.tscn" id="1_pd252"]
 [ext_resource type="Texture2D" uid="uid://ba8mkdywycf3y" path="res://FFVIGraphics/Battlebacks/005-Forest01.png" id="1_unjyp"]
+[ext_resource type="Script" path="res://GitGodot1/battle_script.gd" id="1_wbwej"]
 [ext_resource type="PackedScene" uid="uid://ccs1exjrnqxul" path="res://BattleParty/battleParty.tscn" id="2_7084a"]
 [ext_resource type="PackedScene" uid="uid://c8vyjblwmaqdy" path="res://BattleScenesFloor1/enemiesFloor1Group1.tscn" id="3_b7xti"]
 [ext_resource type="Texture2D" uid="uid://ds3cqer8eyl86" path="res://window.png.png" id="4_df57r"]
 
 [node name="Group1" type="Node2D"]
+script = ExtResource("1_wbwej")
 
 [node name="command_menu" parent="." instance=ExtResource("1_pd252")]
 z_index = 1
