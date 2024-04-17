@@ -9,22 +9,22 @@
 [node name="battleParty" type="Node2D"]
 script = ExtResource("1_psrra")
 
-[node name="ancel" type="CharacterBody2D" parent="."]
+[node name="ancel" type="CharacterBody2D" parent="." groups=["battle_party", "party_group"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="ancel"]
 texture = ExtResource("1_lna2b")
 
-[node name="lorane" type="CharacterBody2D" parent="."]
+[node name="lorane" type="CharacterBody2D" parent="." groups=["battle_party"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="lorane"]
 texture = ExtResource("2_y440e")
 
-[node name="raflahn" type="CharacterBody2D" parent="."]
+[node name="raflahn" type="CharacterBody2D" parent="." groups=["battle_party"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="raflahn"]
 texture = ExtResource("4_kpmul")
 
-[node name="younn" type="CharacterBody2D" parent="."]
+[node name="younn" type="CharacterBody2D" parent="." groups=["battle_party"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="younn"]
 texture = ExtResource("5_xeo5x")

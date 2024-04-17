@@ -40,12 +40,15 @@ func _process(delta):
 	signals.selectionState.connect(select)
 	
 func select():
+	# Temp comment out by Nathan for debug.
+	'''
 	hpbar1.value = hp1
 	hpbar2.value = hp2
 	hpbar3.value = hp3
 	hpbar4.value = hp4
 	$battle_map/enemies/Slime/selection.visible = true
 	$battle_map/enemies/Slime/selection.grab_focus()
+	'''
 	# MAKE A COUNT THAT GOES UP TO 4 TO EXECUTE COMMANDS
 	count += 1
 	if count >= 4:
