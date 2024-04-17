@@ -1,0 +1,174 @@
+[gd_scene load_steps=19 format=3 uid="uid://84ibbx1jtmqf"]
+
+[ext_resource type="Script" path="res://GitGodot1/focus.gd" id="1_sva4v"]
+[ext_resource type="Texture2D" uid="uid://bjn8lrr740fej" path="res://sprites/characters/slime.png" id="1_xjnrk"]
+[ext_resource type="Script" path="res://GitGodot1/Slime.gd" id="2_1wmxr"]
+[ext_resource type="Texture2D" uid="uid://jidsxe3ors0h" path="res://FFVIGraphics/Cursors/001-Cursor01.png" id="3_mmyti"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3fs0"]
+atlas = ExtResource("1_xjnrk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dn6r"]
+atlas = ExtResource("1_xjnrk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83nsg"]
+atlas = ExtResource("1_xjnrk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63ypu"]
+atlas = ExtResource("1_xjnrk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw3ut"]
+atlas = ExtResource("1_xjnrk")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2yyc"]
+atlas = ExtResource("1_xjnrk")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp83r"]
+atlas = ExtResource("1_xjnrk")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d6hv"]
+atlas = ExtResource("1_xjnrk")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0ht0"]
+atlas = ExtResource("1_xjnrk")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_av4s6"]
+atlas = ExtResource("1_xjnrk")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlys1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3fs0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dn6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83nsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63ypu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw3ut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2yyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp83r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d6hv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0ht0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av4s6")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_wsusp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slime/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.956863, 0.352941, 0.239216, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eid31"]
+resource_name = "hurt_animation"
+length = 0.4
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slime/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.541176, 0.137255, 0.0588235, 0.521569), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6uhwh"]
+_data = {
+"RESET": SubResource("Animation_wsusp"),
+"hurt_animation": SubResource("Animation_eid31")
+}
+
+[node name="slimeBattle" type="CharacterBody2D"]
+script = ExtResource("1_sva4v")
+
+[node name="Slime" type="AnimatedSprite2D" parent="."]
+clip_children = 2
+z_index = 1
+position = Vector2(0, -5)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_qlys1")
+animation = &"idle"
+flip_h = true
+script = ExtResource("2_1wmxr")
+
+[node name="ColorRect" type="ColorRect" parent="Slime"]
+offset_left = -19.5
+offset_top = -18.5
+offset_right = 20.5
+offset_bottom = 21.5
+color = Color(0.956863, 0.352941, 0.239216, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="selection" type="Button" parent="Slime"]
+visible = false
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 4.0
+offset_bottom = 6.0
+metadata/_edit_use_anchors_ = true
+
+[node name="hurteffect" type="AnimationPlayer" parent="Slime"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_6uhwh")
+}
+
+[node name="damage_timer" type="Timer" parent="Slime"]
+one_shot = true
+
+[node name="cursor" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-31, 1)
+scale = Vector2(0.71875, 0.75)
+texture = ExtResource("3_mmyti")
+
+[connection signal="pressed" from="Slime/selection" to="Slime" method="_on_selection_pressed"]
