@@ -21,6 +21,7 @@ func _init(): #slime's stats
 	magic_defense = 5
 	damage = 5
 
+'''
 func _process(delta): 
 	#velocity = Vector2.ZERO
 	var damage_done = damage #slime's damage
@@ -34,6 +35,7 @@ func _process(delta):
 		velocity = direction_back * 10 #walks back to starting position
 		$Slime.play("walk")
 	move_and_slide()
+'''
 
 # FOCUS FUNCTIONS FOR CURSOR AND BUTTONS
 # Added by Nathan 4/17/2024
@@ -55,4 +57,5 @@ func focus():
 	
 func unfocus():
 	cursor.hide()
-	button.hide()
+	if button != null:
+		button.hide()

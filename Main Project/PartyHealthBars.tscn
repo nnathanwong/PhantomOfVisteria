@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=3 uid="uid://b24yuqpm1vg74"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03yg8"]
+bg_color = Color(0.576471, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 6
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4g18"]
+bg_color = Color(0, 1, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s42mq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gsnt"]
+bg_color = Color(0, 0, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PartyHealthbar1" type="ProgressBar" parent="."]
+z_index = 1
+offset_left = -360.0
+offset_top = -37.0
+offset_right = -184.0
+offset_bottom = -8.0
+theme_override_styles/background = SubResource("StyleBoxFlat_03yg8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d4g18")
+value = 100.0
+
+[node name="SP-Bar" type="ProgressBar" parent="PartyHealthbar1"]
+offset_left = 176.0
+offset_right = 352.0
+offset_bottom = 29.0
+theme_override_styles/background = SubResource("StyleBoxFlat_s42mq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5gsnt")
+value = 100.0
+
+[node name="PartyHealthbar2" type="ProgressBar" parent="."]
+z_index = 1
+offset_left = 8.0
+offset_top = -37.0
+offset_right = 184.0
+offset_bottom = -8.0
+theme_override_styles/background = SubResource("StyleBoxFlat_03yg8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d4g18")
+value = 100.0
+
+[node name="SP-Bar" type="ProgressBar" parent="PartyHealthbar2"]
+offset_left = 176.0
+offset_right = 352.0
+offset_bottom = 29.0
+theme_override_styles/background = SubResource("StyleBoxFlat_s42mq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5gsnt")
+value = 100.0
+
+[node name="PartyHealthbar3" type="ProgressBar" parent="."]
+z_index = 1
+offset_left = -360.0
+offset_top = 7.0
+offset_right = -184.0
+offset_bottom = 36.0
+theme_override_styles/background = SubResource("StyleBoxFlat_03yg8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d4g18")
+value = 100.0
+
+[node name="SP-Bar" type="ProgressBar" parent="PartyHealthbar3"]
+offset_left = 176.0
+offset_right = 352.0
+offset_bottom = 29.0
+theme_override_styles/background = SubResource("StyleBoxFlat_s42mq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5gsnt")
+value = 100.0
+
+[node name="PartyHealthbar4" type="ProgressBar" parent="."]
+z_index = 1
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 184.0
+offset_bottom = 36.0
+theme_override_styles/background = SubResource("StyleBoxFlat_03yg8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d4g18")
+value = 100.0
+
+[node name="SP-Bar" type="ProgressBar" parent="PartyHealthbar4"]
+offset_left = 176.0
+offset_right = 352.0
+offset_bottom = 29.0
+theme_override_styles/background = SubResource("StyleBoxFlat_s42mq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5gsnt")
+value = 100.0
