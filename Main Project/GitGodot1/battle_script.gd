@@ -50,10 +50,9 @@ func select():
 	$battle_map/enemies/Slime/selection.visible = true
 	$battle_map/enemies/Slime/selection.grab_focus()
 	'''
-=======
-	$battle_map/enemies/SlimeBody/Slime/selection.visible = true
-	$battle_map/enemies/SlimeBody/Slime/selection.grab_focus()
->>>>>>> Stashed changes
+	#$battle_map/enemies/SlimeBody/Slime/selection.visible = true
+	#$battle_map/enemies/SlimeBody/Slime/selection.grab_focus()
+
 	# MAKE A COUNT THAT GOES UP TO 4 TO EXECUTE COMMANDS
 	count += 1
 	if count >= 4:
