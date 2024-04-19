@@ -13,3 +13,4 @@ script = ExtResource("1_e2y76")
 [node name="slimeBattle3" parent="." instance=ExtResource("2_g4kd5")]
 
 [node name="slimeBattle4" parent="." instance=ExtResource("2_g4kd5")]
+position = Vector2(-4, 0)

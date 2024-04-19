@@ -46,9 +46,14 @@ func select():
 	hpbar2.value = hp2
 	hpbar3.value = hp3
 	hpbar4.value = hp4
+<<<<<<< Updated upstream
 	$battle_map/enemies/Slime/selection.visible = true
 	$battle_map/enemies/Slime/selection.grab_focus()
 	'''
+=======
+	$battle_map/enemies/SlimeBody/Slime/selection.visible = true
+	$battle_map/enemies/SlimeBody/Slime/selection.grab_focus()
+>>>>>>> Stashed changes
 	# MAKE A COUNT THAT GOES UP TO 4 TO EXECUTE COMMANDS
 	count += 1
 	if count >= 4:
