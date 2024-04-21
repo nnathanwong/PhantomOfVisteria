@@ -6,9 +6,8 @@ var magic_defense
 var damage_taken
 var damage
 var stats = preload("res://globals/partyStats.gd")
-
-var enemy_turn = false
 var current_position = self.global_position
+var enemy_turn = false
 # Added by Nathan, 4/17/2024
 # Line below adds the nodes of "battle_party" into the tree WHEN the battleParty.tscn scene loads
 @onready var players = get_tree().get_nodes_in_group("battle_party")
@@ -21,7 +20,6 @@ func _init(): #slime's stats
 	magic_defense = 5
 	damage = 5
 
-'''
 func _process(delta): 
 	#velocity = Vector2.ZERO
 	var damage_done = damage #slime's damage
@@ -35,7 +33,6 @@ func _process(delta):
 		velocity = direction_back * 10 #walks back to starting position
 		$Slime.play("walk")
 	move_and_slide()
-'''
 
 # FOCUS FUNCTIONS FOR CURSOR AND BUTTONS
 # Added by Nathan 4/17/2024
@@ -49,7 +46,11 @@ func _ready():
 	var childNode = self.get_child(0) # Gets slimeBattle then Slime
 	print(button)
 	childNode.play("idle")
+	signals.end_turn.connect(new_turn)
 
+func new_turn():
+	enemy_turn = true
+	
 func focus():
 	cursor.show()
 	button.grab_focus()

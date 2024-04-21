@@ -57,4 +57,6 @@ func select():
 	count += 1
 	if count >= 4:
 		$command_menu.visible = false
-	
+
+func _on_end_turn_pressed():
+	signals.end_turn.emit() #created new button to signal when player will end turn.
