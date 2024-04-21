@@ -14,3 +14,5 @@ script = ExtResource("1_e2y76")
 
 [node name="slimeBattle4" parent="." instance=ExtResource("2_g4kd5")]
 position = Vector2(-4, 0)
+
+[connection signal="new_turn" from="." to="slimeBattle" method="_on_enemies_f_1g_1_new_turn"]

@@ -10,7 +10,7 @@ var current_position = self.global_position
 
 func _ready():
 	var enemyNode = self.name
-	var childNode = .get_child(0) # Gets slimeBattle then Slime
+	var childNode = enemyNode.get_child(0) # Gets slimeBattle then Slime
 	print(button)
 	childNode.play("idle")
 

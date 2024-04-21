@@ -55,4 +55,4 @@ offset_right = 350.0
 offset_bottom = 271.0
 text = "End Turn"
 
-[connection signal="pressed" from="endTurn" to="." method="_on_end_turn_pressed"]
+[connection signal="pressed" from="endTurn" to="enemiesF1G1" method="_on_end_turn_pressed"]
