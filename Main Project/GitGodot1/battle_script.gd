@@ -57,4 +57,3 @@ func select():
 	count += 1
 	if count >= 4:
 		$command_menu.visible = false
-	

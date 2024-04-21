@@ -4,3 +4,4 @@ extends Node
 signal selectionState
 signal nextTurn
 signal enemyDeath
+signal enemy_turn

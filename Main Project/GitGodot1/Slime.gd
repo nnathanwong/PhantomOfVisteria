@@ -16,7 +16,6 @@ var stats = preload("res://globals/partyStats.gd")
 @onready var damaged = $damage_timer 
 @onready var cursor = $"../cursor"
 @onready var player = get_node("../../players/ancel")
-var enemy_turn = false
 var current_position = self.global_position
 
 
@@ -36,7 +35,6 @@ func _on_selection_pressed():
 	var total_damage = 10
 	damage_taken = (total_damage * randi_range(2,10)) - (total_damage * physical_defense / 100)
 	$selection.visible = false
-	enemy_turn = true
 	
 	var damage_taken = 5 * randi_range(2,10)
 	print(damage_taken)
@@ -47,6 +45,4 @@ func _on_selection_pressed():
 	hurt.play("RESET")
 
 	#healthbar.value = HP
-
-	
 	signals.nextTurn.emit()

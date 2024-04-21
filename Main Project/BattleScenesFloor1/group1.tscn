@@ -47,3 +47,12 @@ offset_bottom = 273.0
 texture = ExtResource("4_df57r")
 expand_mode = 1
 metadata/_edit_lock_ = true
+
+[node name="endTurn" type="Button" parent="."]
+offset_left = 272.0
+offset_top = 240.0
+offset_right = 350.0
+offset_bottom = 271.0
+text = "End Turn"
+
+[connection signal="pressed" from="endTurn" to="enemiesF1G1" method="_on_end_turn_pressed"]
