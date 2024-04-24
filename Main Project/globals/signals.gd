@@ -5,3 +5,4 @@ signal selectionState
 signal nextTurn
 signal enemyDeath
 signal enemy_turn
+signal attackCommand
