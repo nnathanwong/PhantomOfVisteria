@@ -9,7 +9,7 @@
 [node name="battleParty" type="Node2D"]
 script = ExtResource("1_psrra")
 
-[node name="ancel" type="CharacterBody2D" parent="." groups=["battle_party", "party_group"]]
+[node name="ancel" type="CharacterBody2D" parent="." groups=["battle_party"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="ancel"]
 texture = ExtResource("1_lna2b")

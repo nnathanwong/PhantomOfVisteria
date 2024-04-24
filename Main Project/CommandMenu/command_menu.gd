@@ -20,10 +20,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	signals.nextTurn.connect(next_turn)
-	
-func _init():
-	currentTurn = "Ancel"
+	pass
+
 
 func _unhandled_input(event):
 	if event is InputEventKey:
@@ -39,6 +37,7 @@ func _unhandled_input(event):
 
 func _on_attack_pressed():
 	signals.selectionState.emit()
+	signals.attackCommand.emit()
 
 func _on_skills_pressed():
 	$skills_window.visible = true
