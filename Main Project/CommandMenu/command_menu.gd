@@ -1,5 +1,6 @@
 extends Control
 
+
 var items_inventory = {
 	item_1 = 12,
 	item_2 = 7,
@@ -16,6 +17,7 @@ var currentTurn
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	signals.command_menu_ready.emit()
 	$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,6 +40,9 @@ func _unhandled_input(event):
 func _on_attack_pressed():
 	signals.selectionState.emit()
 	signals.attackCommand.emit()
+	$command_ui.hide()
+	if BattleInstance != null:
+		BattleInstance.command_given = "attack"
 
 func _on_skills_pressed():
 	$skills_window.visible = true

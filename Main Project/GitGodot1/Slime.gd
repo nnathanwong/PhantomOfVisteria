@@ -28,7 +28,7 @@ func _init(): #slime's stats
 func _process(delta): 
 	if HP <= 0:
 		self.queue_free()
-
+'''
 func _on_selection_pressed():
 	$selection.visible = false #using Ancel as a test
 	#var total_damage = skills.attacks.strength()
@@ -46,3 +46,4 @@ func _on_selection_pressed():
 
 	#healthbar.value = HP
 	signals.nextTurn.emit()
+'''
