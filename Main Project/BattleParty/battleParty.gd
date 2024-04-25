@@ -9,7 +9,7 @@ var partyMembers : Array = []
 
 func _ready():
 	partyMembers = get_children()
-	for i in partyMembers.size():
+	for i in range(partyMembers.size()):
 		partyMembers[i].position = Vector2(0,i*32)
 
 # Added by Nathan on 4/24/2024
