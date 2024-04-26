@@ -1,7 +1,7 @@
 extends Node
 
 # BATTLE SIGNALS
-signal selectionState
+signal selectionState(command)
 signal nextTurn
 signal enemyDeath
 signal enemy_turn

@@ -9,6 +9,7 @@ var enemies: Array = []
 var index: int = 0
 var selectionState : bool = false
 signal new_turn(enemy_turn)
+var attack_damage = preload("res://globals/attackStats.gd")
 
 func _ready():
 	enemies = get_children()
@@ -37,12 +38,17 @@ func _process(delta):
 		# Added by Nathan on 4/24/2024
 		elif Input.is_action_just_pressed("ui_accept"):
 			if BattleInstance != null:
-				$"../command_menu".show()
+				#$command_ui.visible = true
 				BattleInstance.selected_enemy = index
 				selectionState = false
 				enemies[index].unfocus()
+				# Processing command given
+				#if BattleInstance.command_given == "attack":
+					#inflict_damage = slime - 
 				signals.nextTurn.emit()
-				$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
+				while $"../command_menu" == null:
+					if $"../command_menu" != null:
+						$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
 
 func switchFocus(new, old):
 	enemies[new].focus()
