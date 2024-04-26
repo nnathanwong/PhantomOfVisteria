@@ -25,7 +25,6 @@ func _process(delta):
 	signals.selectionState.connect(initialFocus)
 	#for i in enemies.size():
 	
-	#FIXME: THIS SHOWS NO MATTER WHAT
 	if selectionState == true:
 		if Input.is_action_just_pressed("ui_up"):
 			if index > 0:
@@ -35,6 +34,16 @@ func _process(delta):
 			if index < enemies.size() - 1:
 				index +=1
 				switchFocus(index, index-1)
+		# Added by Nathan on 4/24/2024
+		elif Input.is_action_just_pressed("ui_accept"):
+			if BattleInstance != null:
+				$"../command_menu".show()
+				BattleInstance.selected_enemy = index
+				selectionState = false
+				enemies[index].unfocus()
+				signals.nextTurn.emit()
+				#$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
+				enemies[BattleInstance.selected_enemy].grab_focus()
 
 func switchFocus(new, old):
 	enemies[new].focus()

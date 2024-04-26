@@ -1,13 +1,5 @@
 extends Node2D
 
-'''
-@onready var ancel = get_node("battle_map/VBoxContainer/Player")
-@onready var lorane = get_node("battle_map/VBoxContainer/lorane")
-@onready var raflahn = get_node("battle_map/VBoxContainer/raflahn")
-@onready var younn = get_node("battle_map/VBoxContainer/younn")
-@onready var command_input = get_node("command_menu")
-'''
-
 @onready var hpbar1 = $battle_map/Party1Healthbar # Player 1 (Ancel's) Health bar
 @onready var hpbar2 = $battle_map/Party2Healthbar # Player 1 (Ancel's) Health bar
 @onready var hpbar3 = $battle_map/Party3Healthbar # Player 1 (Ancel's) Health bar
@@ -24,9 +16,9 @@ var younn1 = PartyStats.Younn.new()
 var hp4 = younn1.returnHP()
 
 var battle_state
-var character_turn
-
-var count : int = 0
+#FIXME: Temp comment out by Nathan as line below impeded with debugging/caused error
+#var party_members = get_node("battleParty").get_children()
+var character_turn : int = 0
 
 func _ready():
 	#$battle_map/Slime.play("idle")
@@ -34,12 +26,12 @@ func _ready():
 	#$battle_map/enemies/Slime.play("idle")
 	$command_menu/command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
 	#print(hp1)
-	
+
 func _process(delta):
-	#character_turn = ancel
 	signals.selectionState.connect(select)
+	signals.nextTurn.connect(next)
 	
-func select():
+func select(count=0):
 	# Temp comment out by Nathan for debug.
 	'''
 	hpbar1.value = hp1
@@ -51,8 +43,8 @@ func select():
 	'''
 	#$battle_map/enemies/SlimeBody/Slime/selection.visible = true
 	#$battle_map/enemies/SlimeBody/Slime/selection.grab_focus()
+	
+func next():
+	character_turn += 1
 
-	# MAKE A COUNT THAT GOES UP TO 4 TO EXECUTE COMMANDS
-	count += 1
-	if count >= 4:
-		$command_menu.visible = false
+

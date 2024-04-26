@@ -29,7 +29,7 @@ func _process(delta):
 	hpBar.value = HP
 	if HP <= 0:
 		self.queue_free()
-
+'''
 func _on_selection_pressed():
 	
 	$selection.visible = false #using Ancel as a test
@@ -48,3 +48,4 @@ func _on_selection_pressed():
 
 	#healthbar.value = HP
 	signals.nextTurn.emit()
+'''
