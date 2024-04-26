@@ -18,12 +18,9 @@ var hp4 = younn1.returnHP()
 var battle_state
 #FIXME: Temp comment out by Nathan as line below impeded with debugging/caused error
 #var party_members = get_node("battleParty").get_children()
-var character_turn : int = 0
 
 func _ready():
-	#$battle_map/Slime.play("idle")
-	#$battle_map/VBoxContainer/AnimatedSprite2D.play("Side Idle")
-	#$battle_map/enemies/Slime.play("idle")
+	
 	$command_menu/command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
 	#print(hp1)
 
@@ -45,6 +42,6 @@ func select(count=0):
 	#$battle_map/enemies/SlimeBody/Slime/selection.grab_focus()
 	
 func next():
-	character_turn += 1
+	BattleInstance.issuer += 1
 
 

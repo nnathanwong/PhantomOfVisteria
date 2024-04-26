@@ -40,7 +40,7 @@ func _unhandled_input(event):
 func _on_attack_pressed():
 	signals.selectionState.emit()
 	signals.attackCommand.emit()
-	$command_ui.hide()
+	#$command_ui.visible = false
 	if BattleInstance != null:
 		BattleInstance.command_given = "attack"
 
