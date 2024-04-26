@@ -46,7 +46,6 @@ func _process(delta):
 				#if BattleInstance.command_given == "attack":
 					#inflict_damage = slime - 
 				signals.nextTurn.emit()
-				$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
 				while $"../command_menu" == null:
 					if $"../command_menu" != null:
 						$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
