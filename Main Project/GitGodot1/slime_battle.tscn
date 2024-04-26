@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://84ibbx1jtmqf"]
+[gd_scene load_steps=21 format=3 uid="uid://84ibbx1jtmqf"]
 
 [ext_resource type="Script" path="res://GitGodot1/battleObject.gd" id="1_5ne55"]
 [ext_resource type="Texture2D" uid="uid://bjn8lrr740fej" path="res://sprites/characters/slime.png" id="1_xjnrk"]
@@ -127,6 +127,11 @@ _data = {
 "hurt_animation": SubResource("Animation_eid31")
 }
 
+[sub_resource type="Theme" id="Theme_6k2ng"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jey08"]
+bg_color = Color(0, 1, 0, 1)
+
 [node name="slimeBattle" type="CharacterBody2D"]
 script = ExtResource("1_5ne55")
 
@@ -164,6 +169,20 @@ libraries = {
 
 [node name="damage_timer" type="Timer" parent="Slime"]
 one_shot = true
+
+[node name="hp1" type="ProgressBar" parent="Slime"]
+z_index = 2
+custom_minimum_size = Vector2(0, 0.001)
+offset_left = 13.5
+offset_top = 0.5
+offset_right = 58.5
+offset_bottom = 17.5
+scale = Vector2(1.00777, 0.178317)
+theme = SubResource("Theme_6k2ng")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jey08")
+max_value = 120.0
+value = 120.0
+show_percentage = false
 
 [node name="cursor" type="Sprite2D" parent="."]
 visible = false

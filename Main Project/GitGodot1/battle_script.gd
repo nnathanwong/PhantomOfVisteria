@@ -33,7 +33,7 @@ func _ready():
 	#$battle_map/VBoxContainer/AnimatedSprite2D.play("Side Idle")
 	#$battle_map/enemies/Slime.play("idle")
 	$command_menu/command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
-	print(hp1)
+	#print(hp1)
 	
 func _process(delta):
 	#character_turn = ancel
@@ -46,7 +46,6 @@ func select():
 	hpbar2.value = hp2
 	hpbar3.value = hp3
 	hpbar4.value = hp4
-<<<<<<< Updated upstream
 	$battle_map/enemies/Slime/selection.visible = true
 	$battle_map/enemies/Slime/selection.grab_focus()
 	'''

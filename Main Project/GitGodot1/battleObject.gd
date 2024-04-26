@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 var HP
 var physical_defense
 var magic_defense
@@ -10,6 +9,8 @@ var current_position = self.global_position
 # Added by Nathan, 4/17/2024
 # Line below adds the nodes of "battle_party" into the tree WHEN the battleParty.tscn scene loads
 @onready var players = get_tree().get_nodes_in_group("battle_party")
+@onready var hpBar1 = $slimeBattle/hp1
+
 
 #Modded by Nathan, 4/17/2024
 #Transferred Dewei's slime.gd code to focus.gd
@@ -109,6 +110,7 @@ func unfocus():
 		button.hide()
 
 func _on_enemies_f_1g_1_new_turn(enemy_turn):
+
 	print('New Turn!')
 	while enemy_turn:
 		enemy_one()

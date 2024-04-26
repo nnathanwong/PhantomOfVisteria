@@ -10,7 +10,6 @@ var index: int = 0
 var selectionState : bool = false
 signal new_turn(enemy_turn)
 
-
 func _ready():
 	enemies = get_children()
 	for i in enemies.size():
