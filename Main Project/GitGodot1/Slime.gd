@@ -18,7 +18,8 @@ var stats = preload("res://globals/partyStats.gd")
 @onready var hpBar = $hp1
 var current_position = self.global_position
 
-
+func _ready():
+	self.play("idle")
 func _init(): #slime's stats
 	HP = 120
 	physical_defense = 5
