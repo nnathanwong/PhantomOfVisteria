@@ -1,0 +1,406 @@
+[gd_scene load_steps=5 format=3 uid="uid://btr57clcd5mtv"]
+
+[ext_resource type="Texture2D" uid="uid://ds3cqer8eyl86" path="res://window.png.png" id="1_0j317"]
+[ext_resource type="Script" path="res://CommandMenu/command_menu.gd" id="1_dfgtb"]
+[ext_resource type="Script" path="res://CommandMenu/skills_window.gd" id="3_7ujhi"]
+[ext_resource type="Script" path="res://CommandMenu/items_window.gd" id="4_aabcb"]
+
+[node name="command_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dfgtb")
+
+[node name="command_ui" type="Sprite2D" parent="."]
+position = Vector2(3, 5)
+scale = Vector2(0.284047, 0.335644)
+texture = ExtResource("1_0j317")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="command_ui"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.172
+offset_top = -522.782
+offset_right = -210.172
+offset_bottom = -24.782
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="command_ui/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_constants/separation = 63
+
+[node name="Separator" type="Control" parent="command_ui/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="attack" type="Button" parent="command_ui/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 90)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Attack"
+
+[node name="skills" type="Button" parent="command_ui/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Skills"
+
+[node name="items" type="Button" parent="command_ui/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Items"
+
+[node name="skills_window" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(140, 4.99988)
+scale = Vector2(0.81323, 0.335211)
+texture = ExtResource("1_0j317")
+script = ExtResource("3_7ujhi")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="skills_window"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.474
+offset_top = -517.655
+offset_right = -4.47356
+offset_bottom = 13.345
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 34
+
+[node name="column_1" type="VBoxContainer" parent="skills_window/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 66
+
+[node name="Control" type="Control" parent="skills_window/HBoxContainer/column_1"]
+layout_mode = 2
+
+[node name="skill_1" type="Button" parent="skills_window/HBoxContainer/column_1"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Blizzard"
+
+[node name="skill_4" type="Button" parent="skills_window/HBoxContainer/column_1"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Protect"
+
+[node name="skill_7" type="Button" parent="skills_window/HBoxContainer/column_1"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Blizzara"
+
+[node name="column_2" type="VBoxContainer" parent="skills_window/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 66
+
+[node name="Control" type="Control" parent="skills_window/HBoxContainer/column_2"]
+layout_mode = 2
+
+[node name="skill_2" type="Button" parent="skills_window/HBoxContainer/column_2"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Thunder"
+
+[node name="skill_5" type="Button" parent="skills_window/HBoxContainer/column_2"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Shell"
+
+[node name="skill_8" type="Button" parent="skills_window/HBoxContainer/column_2"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Thundara"
+
+[node name="column_3" type="VBoxContainer" parent="skills_window/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 66
+
+[node name="Control" type="Control" parent="skills_window/HBoxContainer/column_3"]
+layout_mode = 2
+
+[node name="skill_3" type="Button" parent="skills_window/HBoxContainer/column_3"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Cure"
+
+[node name="skill_6" type="Button" parent="skills_window/HBoxContainer/column_3"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Cura"
+
+[node name="skill_9" type="Button" parent="skills_window/HBoxContainer/column_3"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Regen"
+
+[node name="sp_cost" type="Sprite2D" parent="skills_window"]
+position = Vector2(290.201, 0.652173)
+scale = Vector2(0.148326, 0.995012)
+texture = ExtResource("1_0j317")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="skills_window/sp_cost"]
+offset_left = -239.0
+offset_top = -250.0
+offset_right = 257.0
+offset_bottom = 251.0
+theme_override_constants/separation = 23
+metadata/_edit_use_anchors_ = true
+
+[node name="label_SP_cost" type="Label" parent="skills_window/sp_cost/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "SP COST"
+horizontal_alignment = 1
+
+[node name="label_cost_1" type="Label" parent="skills_window/sp_cost/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "3"
+horizontal_alignment = 1
+
+[node name="Separator" type="Control" parent="skills_window/sp_cost/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator2" type="Control" parent="skills_window/sp_cost/VBoxContainer"]
+layout_mode = 2
+
+[node name="label_cost_2" type="Label" parent="skills_window/sp_cost/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "6"
+horizontal_alignment = 1
+
+[node name="Separator3" type="Control" parent="skills_window/sp_cost/VBoxContainer"]
+layout_mode = 2
+
+[node name="Separator4" type="Control" parent="skills_window/sp_cost/VBoxContainer"]
+layout_mode = 2
+
+[node name="label_cost_3" type="Label" parent="skills_window/sp_cost/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "10"
+horizontal_alignment = 1
+
+[node name="items_window" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(141, 5.99994)
+scale = Vector2(0.81323, 0.335211)
+texture = ExtResource("1_0j317")
+script = ExtResource("4_aabcb")
+
+[node name="items_extended" type="Sprite2D" parent="items_window"]
+position = Vector2(272.986, 4.47485)
+scale = Vector2(0.0669857, 1.01015)
+texture = ExtResource("1_0j317")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="items_window"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -497.0
+offset_top = -531.5
+offset_right = -1.0
+offset_bottom = -0.500061
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 44
+
+[node name="column_1" type="VBoxContainer" parent="items_window/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 66
+
+[node name="Control" type="Control" parent="items_window/HBoxContainer/column_1"]
+layout_mode = 2
+
+[node name="item_1" type="Button" parent="items_window/HBoxContainer/column_1"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="item_4" type="Button" parent="items_window/HBoxContainer/column_1"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="item_7" type="Button" parent="items_window/HBoxContainer/column_1"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="column_2" type="VBoxContainer" parent="items_window/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 66
+
+[node name="Control" type="Control" parent="items_window/HBoxContainer/column_2"]
+layout_mode = 2
+
+[node name="item_2" type="Button" parent="items_window/HBoxContainer/column_2"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="item_5" type="Button" parent="items_window/HBoxContainer/column_2"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="item_8" type="Button" parent="items_window/HBoxContainer/column_2"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="column_3" type="VBoxContainer" parent="items_window/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 66
+
+[node name="Control" type="Control" parent="items_window/HBoxContainer/column_3"]
+layout_mode = 2
+
+[node name="item_3" type="Button" parent="items_window/HBoxContainer/column_3"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="item_6" type="Button" parent="items_window/HBoxContainer/column_3"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="item_9" type="Button" parent="items_window/HBoxContainer/column_3"]
+custom_minimum_size = Vector2(135, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="inventory_1" type="VBoxContainer" parent="items_window"]
+offset_left = -102.0
+offset_top = -248.0
+offset_right = -68.0
+offset_bottom = 252.0
+theme_override_constants/separation = 59
+
+[node name="Separator" type="Control" parent="items_window/inventory_1"]
+layout_mode = 2
+
+[node name="inv_item_1" type="Label" parent="items_window/inventory_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="Separator2" type="Control" parent="items_window/inventory_1"]
+layout_mode = 2
+
+[node name="inv_item_4" type="Label" parent="items_window/inventory_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="Separator3" type="Control" parent="items_window/inventory_1"]
+layout_mode = 2
+
+[node name="inv_item_7" type="Label" parent="items_window/inventory_1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="inventory_2" type="VBoxContainer" parent="items_window"]
+offset_left = 76.2392
+offset_top = -250.588
+offset_right = 110.239
+offset_bottom = 249.412
+theme_override_constants/separation = 59
+
+[node name="Separator" type="Control" parent="items_window/inventory_2"]
+layout_mode = 2
+
+[node name="item_1" type="Label" parent="items_window/inventory_2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="Separator2" type="Control" parent="items_window/inventory_2"]
+layout_mode = 2
+
+[node name="item_2" type="Label" parent="items_window/inventory_2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="Separator3" type="Control" parent="items_window/inventory_2"]
+layout_mode = 2
+
+[node name="item_3" type="Label" parent="items_window/inventory_2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="inventory_3" type="VBoxContainer" parent="items_window"]
+offset_left = 254.541
+offset_top = -247.605
+offset_right = 288.541
+offset_bottom = 252.395
+theme_override_constants/separation = 59
+
+[node name="Separator" type="Control" parent="items_window/inventory_3"]
+layout_mode = 2
+
+[node name="item_1" type="Label" parent="items_window/inventory_3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="Separator2" type="Control" parent="items_window/inventory_3"]
+layout_mode = 2
+
+[node name="item_2" type="Label" parent="items_window/inventory_3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="Separator3" type="Control" parent="items_window/inventory_3"]
+layout_mode = 2
+
+[node name="item_3" type="Label" parent="items_window/inventory_3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[connection signal="pressed" from="command_ui/HBoxContainer/VBoxContainer/attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="command_ui/HBoxContainer/VBoxContainer/skills" to="." method="_on_skills_pressed"]
+[connection signal="pressed" from="command_ui/HBoxContainer/VBoxContainer/items" to="." method="_on_items_pressed"]
+[connection signal="pressed" from="items_window/HBoxContainer/column_1/item_1" to="items_window" method="_on_item_1_pressed"]
+[connection signal="pressed" from="items_window/HBoxContainer/column_1/item_4" to="items_window" method="_on_item_4_pressed"]
+[connection signal="pressed" from="items_window/HBoxContainer/column_1/item_7" to="items_window" method="_on_item_7_pressed"]
+[connection signal="pressed" from="items_window/HBoxContainer/column_2/item_2" to="items_window" method="_on_item_2_pressed"]
+[connection signal="pressed" from="items_window/HBoxContainer/column_2/item_5" to="items_window" method="_on_item_5_pressed"]
+[connection signal="pressed" from="items_window/HBoxContainer/column_2/item_8" to="items_window" method="_on_item_8_pressed"]
+[connection signal="pressed" from="items_window/HBoxContainer/column_3/item_3" to="items_window" method="_on_item_3_pressed"]
+[connection signal="pressed" from="items_window/HBoxContainer/column_3/item_6" to="items_window" method="_on_item_6_pressed"]
+[connection signal="pressed" from="items_window/HBoxContainer/column_3/item_9" to="items_window" method="_on_item_9_pressed"]
