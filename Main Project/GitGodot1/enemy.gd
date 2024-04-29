@@ -33,4 +33,4 @@ func _on_detection_body_exited(body):
 func _on_collision_body_entered(body):
 	#checks if object enter is named 'player' or not
 	if body.name == "player":
-		get_tree().change_scene_to_file("res://GitGodot1/BattleScene.tscn") #transfers scene to battle scene
+		get_tree().change_scene_to_file("res://BattleScenesFloor1/group1.tscn") #transfers scene to battle scene

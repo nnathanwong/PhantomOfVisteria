@@ -13,10 +13,9 @@ func _ready():
 		partyMembers[i].position = Vector2(0,i*32)
 
 # Added by Nathan on 4/24/2024
+
 class Commands:
-	'''
-	Purpose: Store commands given to characters and allow for command execution
-	'''
+	# Purpose: Store commands given to characters and allow for command execution
 	# Initializes variables to use/modify in class
 	var ancel_command
 	var ancel_select
@@ -30,12 +29,10 @@ class Commands:
 	var select : int = 0
 	var attack = attackStats.new()
 	func store_command(name, command, select):
-		'''
-		Purpose: Store commands given to characters
-		Parameters: The character index of a party member and what command they were given
-		Return value: None
-		Sample call: commands.store_command(1, "fire")
-		'''
+		# Purpose: Store commands given to characters
+		# Parameters: The character index of a party member and what command they were given
+		# Return value: None
+		# Sample call: commands.store_command(1, "fire")
 		if name == 0:
 			ancel_command = command
 			ancel_select = select
@@ -49,12 +46,10 @@ class Commands:
 			younn_command = command
 			younn_select = select
 	func execute(name):
-		'''
-		Purpose: Execute a character's given command
-		Parameters: Character index value
-		Return value: None
-		Sample call: commands.execute(2) - Executes Raflahn's command
-		'''
+		# Purpose: Execute a character's given command
+		# Parameters: Character index value
+		# Return value: None
+		# Sample call: commands.execute(2) - Executes Raflahn's command
 		if name == 0:
 			if ancel_command == "attack":
 				var inflict_damage = attack.strength(0)

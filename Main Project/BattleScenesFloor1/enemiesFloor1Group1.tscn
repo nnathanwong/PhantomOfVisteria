@@ -7,6 +7,7 @@
 script = ExtResource("1_e2y76")
 
 [node name="slimeBattle" parent="." instance=ExtResource("2_g4kd5")]
+position = Vector2(-2, 0)
 
 [node name="slimeBattle2" parent="." instance=ExtResource("2_g4kd5")]
 
