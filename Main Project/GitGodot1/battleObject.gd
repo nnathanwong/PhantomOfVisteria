@@ -16,15 +16,6 @@ var execute = preload("res://globals/battle_instance.gd").new()
 var enemies: Array = []
 @onready var hpBar1 = $slimeBattle/hp1
 
-
-#Modded by Nathan, 4/17/2024
-#Transferred Dewei's slime.gd code to focus.gd
-func _init(): #slime's stats
-	HP = 120
-	physical_defense = 5
-	magic_defense = 5
-	damage = 5
-
 # FOCUS FUNCTIONS FOR CURSOR AND BUTTONS
 # Added by Nathan 4/17/2024
 
@@ -86,7 +77,7 @@ func _on_enemies_f_1g_1_new_turn(enemy_turn):
 
 func _on_selection_pressed():
 	if command_given == "attack":
-		execute.attack_enemy(current_turn, command_given)
+		get_child(0).HP -= execute.attack_enemy(current_turn)
 	hurt.play("hurt_animation")
 	damaged.start()
 	await damaged.timeout

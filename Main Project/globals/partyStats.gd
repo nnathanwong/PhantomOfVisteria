@@ -1,4 +1,4 @@
-extends Resource
+extends Node
 
 # STATS FOR ANCEL
 # Max stats
