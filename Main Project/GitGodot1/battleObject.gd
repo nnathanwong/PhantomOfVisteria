@@ -55,7 +55,12 @@ func enemy_attack(target, enemy):
 	var test = $"res://BattleParty/battleParty.tscn".get_child(target)
 	var direction = ($"res://BattleParty/battleParty.tscn".get_child(target).global_position - enemies[enemy].global_position).normalized()
 	var velocity = direction * 10 #walk to target's location
+<<<<<<< Updated upstream
 	get_child(0).play("walk")
+=======
+	enemy.global_position += velocity
+	$Slime.play("walk")
+>>>>>>> Stashed changes
 	#stats.Ancel.takeDamage(self, damage_done) #not declared for now!
 	var direction_back = (current_position - enemies[enemy].global_position).normalized()
 	velocity = direction_back * 10 #walks back to starting position
