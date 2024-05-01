@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 signals="*res://globals/signals.gd"
 BattleInstance="*res://globals/battle_instance.gd"
-PartyMemberStats="*res://globals/partyStats.gd"
 
 [input]
 

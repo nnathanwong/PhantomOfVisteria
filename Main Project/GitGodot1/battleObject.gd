@@ -51,18 +51,13 @@ func store_command(command, turn):
 #New functions made by DEWEI
 #main use is for declaring enemy targets and enemy attacks
 func enemy_attack(target, enemy):
-	var current_position = enemies[enemy].global_position
-	var test = $"res://BattleParty/battleParty.tscn".get_child(target)
-	var direction = ($"res://BattleParty/battleParty.tscn".get_child(target).global_position - enemies[enemy].global_position).normalized()
+	var current_position = enemy.global_position
+	var direction = (players[target].global_position - enemy.global_position).normalized()
 	var velocity = direction * 10 #walk to target's location
-<<<<<<< Updated upstream
-	get_child(0).play("walk")
-=======
-	enemy.global_position += velocity
+	enemy.global_position += velocity #does not update all at once
 	$Slime.play("walk")
->>>>>>> Stashed changes
 	#stats.Ancel.takeDamage(self, damage_done) #not declared for now!
-	var direction_back = (current_position - enemies[enemy].global_position).normalized()
+	var direction_back = (current_position - enemy.global_position).normalized()
 	velocity = direction_back * 10 #walks back to starting position
 	get_child(0).play("walk")
 	move_and_slide()
@@ -82,9 +77,10 @@ func _on_enemies_f_1g_1_new_turn(enemy_turn):
 	while enemy_turn:
 		enemies = $"..".get_children()
 		#Written by Dewei, trying to get all enemies to attack at the same time instead of only one being able to
-		for i in enemies.size(): 
-			var target = randi_range(0, players.size())
-			enemy_attack(target, i)
+		for i in range(enemies.size()-1):
+			var enemy = $".."
+			var target = randi_range(0, players.size()-1)
+			enemy_attack(target, enemy.get_child(i))
 			enemy_turn = false
 
 
