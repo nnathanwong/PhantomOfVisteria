@@ -25,6 +25,7 @@ var battle_state
 
 func _ready():
 	$command_menu/command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
+	#print(hp1)
 
 func _process(delta):
 	signals.selectionState.connect(select)
@@ -37,7 +38,6 @@ func select(count=0):
 	hpbar2.value = hp2
 	hpbar3.value = hp3
 	hpbar4.value = hp4
-<<<<<<< Updated upstream
 	$battle_map/enemies/Slime/selection.visible = true
 	$battle_map/enemies/Slime/selection.grab_focus()
 	'''
