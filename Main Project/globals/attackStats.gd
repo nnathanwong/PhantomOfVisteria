@@ -9,7 +9,7 @@ var magic_damage : int = 5
 func strength(name):
 	# Modified by Nathan 4/24/2024
 	if name == 0:
-		var ancel = PartyMemberStats.Ancel.strength + normal_damage
+		var ancel = PartyMemberStats.ancel_strength + normal_damage
 		return ancel
 	elif name == 1:
 		var lorane = multiplier.Lorane.strength + normal_damage

@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+PartyMemberStats="*res://globals/partyStats.gd"
 signals="*res://globals/signals.gd"
 BattleInstance="*res://globals/battle_instance.gd"
 

@@ -8,7 +8,7 @@ var damage
 @onready var damaged = self.get_child(0).get_child(3)
 var current_turn : int = 0
 var command_given = ""
-var stats = preload("res://globals/partyStats.gd")
+#var stats = preload("res://globals/partyStats.gd")
 var execute = preload("res://globals/battle_instance.gd").new()
 # Added by Nathan, 4/17/2024
 # Line below adds the nodes of "battle_party" into the tree WHEN the battleParty.tscn scene loads

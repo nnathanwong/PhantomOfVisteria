@@ -9,16 +9,6 @@ extends Node2D
 const Commands = preload("res://globals/battle_instance.gd")
 var command = Commands.new()
 
-# HP Added by Aaron on 4/10/24
-var ancel1 = PartyStats.Ancel.new() # Partystat Ancel class
-var hp1 = ancel1.returnHP() # Returns the hp from the ancel class
-var lorane1 = PartyStats.Lorane.new()
-var hp2 = lorane1.returnHP()
-var raflahn1 = PartyStats.Raflahn.new() 
-var hp3 = raflahn1.returnHP()
-var younn1 = PartyStats.Younn.new() 
-var hp4 = younn1.returnHP()
-
 var battle_state
 #FIXME: Temp comment out by Nathan as line below impeded with debugging/caused error
 #var party_members = get_node("battleParty").get_children()
