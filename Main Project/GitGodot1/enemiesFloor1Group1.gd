@@ -38,7 +38,6 @@ func _process(delta):
 		# Added by Nathan on 4/24/2024
 		elif Input.is_action_just_pressed("ui_accept"):
 			if BattleInstance != null:
-				#$command_ui.visible = true
 				BattleInstance.selected_enemy = index
 				selectionState = false
 				enemies[index].unfocus()

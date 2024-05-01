@@ -12,8 +12,8 @@ var items_inventory = {
 	item_8 = 30,
 	item_9 = 10,
 }
-var currentTurn
-
+var current_turn : int = 0
+const command = preload("res://globals/battle_instance.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,30 +32,36 @@ func _unhandled_input(event):
 				$skills_window.visible = false
 				$command_ui.visible = true
 				$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
+				current_turn -= 1
 			elif $items_window.visible == true:
 				$items_window.visible = false
 				$command_ui.visible = true
 				$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
+				current_turn -= 1
 
 func _on_attack_pressed():
 	signals.selectionState.emit()
-	signals.attackCommand.emit()
-	#$command_ui.visible = false
-	if BattleInstance != null:
-		BattleInstance.command_given = "attack"
+	signals.input_command.emit("attack", current_turn)
+	$command_ui.visible = false
+	current_turn += 1
 
 func _on_skills_pressed():
 	$skills_window.visible = true
 	$command_ui.visible = false
 	$skills_window/HBoxContainer/column_1/skill_1.grab_focus()
+	current_turn += 1
 
 func _on_items_pressed():
 	$items_window.visible = true
 	$command_ui.visible = false
 	$items_window/HBoxContainer/column_1/item_1.grab_focus()
+	current_turn += 1
 
 func next_turn():
 	$command_ui.visible = false
 	await get_tree().create_timer(1.5).timeout
 	$command_ui.visible = true
 	$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
+
+func decrement_turn():
+	pass
