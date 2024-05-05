@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://3nf6or0rfx3r"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_a8jna"]
+[ext_resource type="FontFile" uid="uid://dn64nr57wskkj" path="res://Pixelify_Sans/static/PixelifySans-SemiBold.ttf" id="1_xppw8"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a8jna")
+
+[node name="buttonBox" type="VBoxContainer" parent="."]
+top_level = true
+z_index = 1
+layout_mode = 0
+offset_left = 334.0
+offset_top = 172.0
+offset_right = 791.0
+offset_bottom = 499.0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="start" type="Button" parent="buttonBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xppw8")
+theme_override_font_sizes/font_size = 50
+text = "START GAME"
+
+[node name="credits" type="Button" parent="buttonBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xppw8")
+theme_override_font_sizes/font_size = 50
+text = "CREDITS
+"
+
+[node name="quit" type="Button" parent="buttonBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_xppw8")
+theme_override_font_sizes/font_size = 50
+text = "QUIT GAME
+"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1153.0
+offset_bottom = 650.0
+color = Color(0.117647, 0.458824, 0.317647, 0.737255)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -486.0
+offset_top = 92.0
+offset_right = 1028.0
+offset_bottom = 814.0
+rotation = -0.51162
+color = Color(0.13369, 0.29, 0.0986, 0.588235)
+
+[connection signal="pressed" from="buttonBox/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="buttonBox/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="buttonBox/quit" to="." method="_on_quit_pressed"]
