@@ -29,4 +29,4 @@ func _init(): #slime's stats
 func _process(delta): 
 	hpBar.value = HP
 	if HP <= 0:
-		self.queue_free()
+		self.get_parent().queue_free()

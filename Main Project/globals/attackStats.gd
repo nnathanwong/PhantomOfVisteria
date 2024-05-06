@@ -12,13 +12,13 @@ func strength(name):
 		var ancel = PartyMemberStats.ancel_strength + normal_damage
 		return ancel
 	elif name == 1:
-		var lorane = multiplier.Lorane.strength + normal_damage
+		var lorane = PartyMemberStats.lorane_strength + normal_damage
 		return lorane
 	elif name == 2:
-		var raflahn = multiplier.Raflahn.strength + normal_damage
+		var raflahn = PartyMemberStats.raflahn_strength + normal_damage
 		return raflahn
 	elif name == 3:
-		var younn = multiplier.Younn.strength + normal_damage
+		var younn = PartyMemberStats.younn_strength + normal_damage
 		return younn
 
 func magic():

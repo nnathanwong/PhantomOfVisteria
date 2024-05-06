@@ -36,8 +36,6 @@ func _process(delta):
 func store_command(command, turn):
 	command_given = command
 	current_turn = turn
-	#if turn == 0:
-	#	current_turn = "Ancel"
 
 #New functions made by DEWEI
 #main use is for declaring enemy targets and enemy attacks
@@ -55,8 +53,8 @@ func enemy_attack(target, enemy):
 
 func focus():
 	cursor.show()
-	button.grab_focus()
 	button.show()
+	button.grab_focus()
 	
 func unfocus():
 	cursor.hide()
@@ -76,12 +74,16 @@ func _on_enemies_f_1g_1_new_turn(enemy_turn):
 
 
 func _on_selection_pressed():
+	button.hide()
+	signals.nextTurn.emit()
 	if command_given == "attack":
-		get_child(0).HP -= execute.attack_enemy(current_turn)
+		# Second part of expression below computes percentage value to multiply the inflicted_damage amount with. 
+		# This decreases inflicted_damage by computed percentage
+		get_child(0).HP -= round((execute.attack_enemy(current_turn)) * (float(100 - get_child(0).physical_defense)/100) * (randi_range(1,5)))
+	if BattleInstance.current_turn >= 4:
+		BattleInstance.current_turn = 0
 	hurt.play("hurt_animation")
 	damaged.start()
 	await damaged.timeout
 	hurt.play("RESET")
-
 	#healthbar.value = HP
-	signals.nextTurn.emit()

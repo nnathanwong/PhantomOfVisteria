@@ -14,12 +14,12 @@ var battle_state
 #var party_members = get_node("battleParty").get_children()
 
 func _ready():
+	
 	$command_menu/command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
 	#print(hp1)
 
 func _process(delta):
 	signals.selectionState.connect(select)
-	signals.nextTurn.connect(next)
 	
 func select(count=0):
 	# Temp comment out by Nathan for debug.
@@ -34,7 +34,5 @@ func select(count=0):
 	#$battle_map/enemies/SlimeBody/Slime/selection.visible = true
 	#$battle_map/enemies/SlimeBody/Slime/selection.grab_focus()
 	
-func next():
-	command.issuer += 1
 
 

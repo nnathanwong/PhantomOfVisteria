@@ -12,7 +12,6 @@ var items_inventory = {
 	item_8 = 30,
 	item_9 = 10,
 }
-var current_turn : int = 0
 const command = preload("res://globals/battle_instance.gd")
 
 # Called when the node enters the scene tree for the first time.
@@ -22,7 +21,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	signals.nextTurn.connect(next_turn)
 
 
 func _unhandled_input(event):
@@ -32,30 +31,30 @@ func _unhandled_input(event):
 				$skills_window.visible = false
 				$command_ui.visible = true
 				$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
-				current_turn -= 1
+				BattleInstance.current_turn -= 1
 			elif $items_window.visible == true:
 				$items_window.visible = false
 				$command_ui.visible = true
 				$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
-				current_turn -= 1
+				BattleInstance.current_turn -= 1
 
 func _on_attack_pressed():
 	signals.selectionState.emit()
-	signals.input_command.emit("attack", current_turn)
+	signals.input_command.emit("attack", BattleInstance.current_turn)
 	$command_ui.visible = false
-	current_turn += 1
+	BattleInstance.current_turn += 1
 
 func _on_skills_pressed():
 	$skills_window.visible = true
 	$command_ui.visible = false
 	$skills_window/HBoxContainer/column_1/skill_1.grab_focus()
-	current_turn += 1
+	BattleInstance.current_turn += 1
 
 func _on_items_pressed():
 	$items_window.visible = true
 	$command_ui.visible = false
 	$items_window/HBoxContainer/column_1/item_1.grab_focus()
-	current_turn += 1
+	BattleInstance.current_turn += 1
 
 func next_turn():
 	$command_ui.visible = false
