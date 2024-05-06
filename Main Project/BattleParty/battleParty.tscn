@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccs1exjrnqxul"]
+[gd_scene load_steps=7 format=3 uid="uid://ccs1exjrnqxul"]
 
 [ext_resource type="Script" path="res://BattleParty/battleParty.gd" id="1_psrra"]
 [ext_resource type="Texture2D" uid="uid://jidsxe3ors0h" path="res://FFVIGraphics/Cursors/001-Cursor01.png" id="2_8wr52"]
+[ext_resource type="Texture2D" uid="uid://dndhp1c7jn8d5" path="res://sprites/characters/ancel/right/604813f6-fbe6-46d1-9e52-a7d31e5fa2c4.png" id="2_kdepn"]
 [ext_resource type="Texture2D" uid="uid://csgclaawhtwx1" path="res://sprites/characters/lorane/right/27650892-b59d-4119-8014-46b9e9bf6756.png" id="2_y440e"]
 [ext_resource type="Texture2D" uid="uid://opkh7mbabb1b" path="res://sprites/characters/raflahn/right/93ca156a-0e6d-442f-9948-c8310cba7a3a.png" id="4_kpmul"]
 [ext_resource type="Texture2D" uid="uid://dq4gk6rydyfok" path="res://sprites/characters/younn/right/9ce08141-aef8-4e6a-b4b9-068c78767128.png" id="5_xeo5x"]
@@ -12,9 +13,12 @@ script = ExtResource("1_psrra")
 [node name="ancel" type="CharacterBody2D" parent="." groups=["battle_party"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="ancel"]
-texture = ExtResource("2_8wr52")
+texture = ExtResource("2_kdepn")
 
 [node name="cursor" type="Sprite2D" parent="ancel"]
+visible = false
+position = Vector2(-15, 1)
+scale = Vector2(0.390625, 0.296875)
 texture = ExtResource("2_8wr52")
 
 [node name="lorane" type="CharacterBody2D" parent="." groups=["battle_party"]]
@@ -23,6 +27,9 @@ texture = ExtResource("2_8wr52")
 texture = ExtResource("2_y440e")
 
 [node name="cursor" type="Sprite2D" parent="lorane"]
+visible = false
+position = Vector2(-15, 1)
+scale = Vector2(0.390625, 0.3125)
 texture = ExtResource("2_8wr52")
 
 [node name="raflahn" type="CharacterBody2D" parent="." groups=["battle_party"]]
@@ -31,6 +38,9 @@ texture = ExtResource("2_8wr52")
 texture = ExtResource("4_kpmul")
 
 [node name="cursor" type="Sprite2D" parent="raflahn"]
+visible = false
+position = Vector2(-15, 1)
+scale = Vector2(0.4375, 0.296875)
 texture = ExtResource("2_8wr52")
 
 [node name="younn" type="CharacterBody2D" parent="." groups=["battle_party"]]
@@ -39,4 +49,7 @@ texture = ExtResource("2_8wr52")
 texture = ExtResource("5_xeo5x")
 
 [node name="cursor" type="Sprite2D" parent="younn"]
+visible = false
+position = Vector2(-15, 1)
+scale = Vector2(0.4375, 0.3125)
 texture = ExtResource("2_8wr52")
