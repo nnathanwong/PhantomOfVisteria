@@ -1,9 +1,17 @@
 extends CharacterBody2D
+
+var maxHP
 var HP
 var physical_defense
 var magic_defense
 var damage_taken
 var damage
+var poison 
+var	bleed 
+var	burn 
+var	confuse 
+var	fear
+
 @onready var hurt = self.get_child(0).get_child(2)
 @onready var damaged = self.get_child(0).get_child(3)
 var current_turn : int = 0
@@ -33,6 +41,27 @@ func _ready():
 func _process(delta):
 	signals.input_command.connect(store_command)
 	
+func check_for_poison():
+	for i in enemies:
+		if i.poison == true:
+			get_child(0).HP -= ceil(get_child(0).maxHP * 0.0625)
+			physical_defense = 2.5
+		else:
+			physical_defense = 5
+			
+func check_for_burn():
+	for i in enemies:
+		if i.burn == true:
+			get_child(0).HP -= ceil(get_child(0).maxHP * 0.0625)
+			magic_defense = 2.5
+		else:
+			magic_defense = 5
+			
+func check_for_bleed():
+	for i in enemies:
+		if i.burn == true:
+			get_child(0).HP -= ceil(get_child(0).maxHP * 0.125)
+			
 func store_command(command, turn):
 	command_given = command
 	current_turn = turn
