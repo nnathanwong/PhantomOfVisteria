@@ -113,7 +113,7 @@ func _on_enemies_f_1g_1_new_turn(enemy_turn):
 	while enemy_turn:
 		enemies = $"..".get_children()
 		#Written by Dewei, trying to get all enemies to attack at the same time instead of only one being able to
-		for i in range(enemies.size()-1):
+		for i in range(enemies.size()):
 			var enemy = $".."
 			var target = randi_range(0, players.size()-1)
 			enemy_attack(target, enemy.get_child(i))
