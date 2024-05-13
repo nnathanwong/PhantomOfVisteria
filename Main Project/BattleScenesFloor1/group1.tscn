@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvm775q85pdrb"]
+[gd_scene load_steps=9 format=3 uid="uid://dvm775q85pdrb"]
 
 [ext_resource type="PackedScene" uid="uid://btr57clcd5mtv" path="res://CommandMenu/command_menu.tscn" id="1_pd252"]
 [ext_resource type="Texture2D" uid="uid://ba8mkdywycf3y" path="res://FFVIGraphics/Battlebacks/005-Forest01.png" id="1_unjyp"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ccs1exjrnqxul" path="res://BattleParty/battleParty.tscn" id="2_7084a"]
 [ext_resource type="PackedScene" uid="uid://c8vyjblwmaqdy" path="res://BattleScenesFloor1/enemiesFloor1Group1.tscn" id="3_b7xti"]
 [ext_resource type="Texture2D" uid="uid://ds3cqer8eyl86" path="res://window.png.png" id="4_df57r"]
+[ext_resource type="Texture2D" uid="uid://db13xkyittsoc" path="res://FFVIGraphics/Cursors/003-Cursor03.PNG" id="4_wcsyd"]
 [ext_resource type="PackedScene" uid="uid://csvc6xgw2ic1u" path="res://slime_healthbar.tscn" id="7_2nald"]
 
 [node name="Group1" type="Node2D"]
@@ -31,6 +32,13 @@ scale = Vector2(1.1, 1.1)
 texture = ExtResource("1_unjyp")
 expand_mode = 1
 metadata/_edit_lock_ = true
+
+[node name="indicator" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(57, 57)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_wcsyd")
 
 [node name="battleParty" parent="." instance=ExtResource("2_7084a")]
 position = Vector2(57, 72)

@@ -10,7 +10,7 @@ var poison
 var	bleed 
 var	burn 
 var	confuse 
-var	fear
+var	freeze
 
 @onready var hurt = self.get_child(0).get_child(2)
 @onready var damaged = self.get_child(0).get_child(3)
@@ -23,7 +23,7 @@ var execute = preload("res://globals/battle_instance.gd").new()
 @onready var players = get_tree().get_nodes_in_group("battle_party")
 var enemies: Array = []
 @onready var hpBar1 = $slimeBattle/hp1
-
+@onready var indicator = $indicator
 # FOCUS FUNCTIONS FOR CURSOR AND BUTTONS
 # Added by Nathan 4/17/2024
 
@@ -62,6 +62,24 @@ func check_for_bleed():
 		if i.burn == true:
 			get_child(0).HP -= ceil(get_child(0).maxHP * 0.125)
 			
+func check_for_confusion():
+	for i in enemies:
+		if i.confuse == true:
+			var confused = randi_range(0,2)
+			if confused == 0:
+				pass
+			else:
+				pass
+					
+func check_for_freeze():
+	for i in enemies:
+		if i.freeze == true:
+			var dethaw = randi_range(0,3)
+			if dethaw == 0:
+				i.freeze = false
+			else:
+				pass
+					
 func store_command(command, turn):
 	command_given = command
 	current_turn = turn
@@ -101,7 +119,12 @@ func _on_enemies_f_1g_1_new_turn(enemy_turn):
 			enemy_attack(target, enemy.get_child(i))
 			enemy_turn = false
 
-
+func turn_indicator(enemy_turn):
+	while not enemy_turn:
+		indicator.position.y += BattleInstance.current_turn * 20
+		print(indicator.position.y)
+	indicator.hide()
+		
 func _on_selection_pressed():
 	button.hide()
 	signals.nextTurn.emit()
