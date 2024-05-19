@@ -8,19 +8,27 @@ extends Node2D
 # Added by Nathan on 4/26/2024
 const Commands = preload("res://globals/battle_instance.gd")
 var command = Commands.new()
-
 var battle_state
+var victory = null
 #FIXME: Temp comment out by Nathan as line below impeded with debugging/caused error
 #var party_members = get_node("battleParty").get_children()
 
 func _ready():
-	
 	$command_menu/command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
-	#print(hp1)
 
 func _process(delta):
 	signals.selectionState.connect(select)
-	
+	if battle_state == false:
+		if victory == true:
+			$command_menu.hide()
+			await get_tree().create_timer(2.2).timeout
+			signals.change_batlog.emit("Victory!")
+			victory == null
+	var cur_num_enemies = len(get_child(5).get_children())
+	if cur_num_enemies <= 0:
+		battle_state = false
+		victory = true
+
 func select(count=0):
 	# Temp comment out by Nathan for debug.
 	'''

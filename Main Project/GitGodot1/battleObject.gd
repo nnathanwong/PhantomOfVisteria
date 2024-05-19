@@ -131,6 +131,7 @@ func _on_selection_pressed():
 	if command_given == "attack":
 		# Second part of expression below computes percentage value to multiply the inflicted_damage amount with. 
 		# This decreases inflicted_damage by computed percentage
+		signals.change_batlog.emit("Attack")
 		get_child(0).HP -= round((execute.attack_enemy(current_turn)) * (float(100 - get_child(0).physical_defense)/100) * (randi_range(1,5)))
 	if BattleInstance.current_turn >= 4:
 		BattleInstance.current_turn = 0

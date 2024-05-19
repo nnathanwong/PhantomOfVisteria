@@ -58,7 +58,7 @@ func _on_items_pressed():
 
 func next_turn():
 	$command_ui.visible = false
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(2).timeout
 	$command_ui.visible = true
 	$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
 

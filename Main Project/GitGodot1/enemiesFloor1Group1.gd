@@ -22,8 +22,8 @@ func initialFocus():
 		selectionState = true
 
 func _process(delta):
-	signals.selectionState.connect(initialFocus)
 	enemies = get_children()
+	signals.selectionState.connect(initialFocus)
 	if selectionState == true:
 		if Input.is_action_just_pressed("ui_up"):
 			if index > 0:
