@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2ycalgx7idh2"
-path="res://.godot/imported/ancel.png-8d1693b8ccf510654b830a27948c7ded.ctex"
+uid="uid://sgqyrl8b2ikj"
+path="res://.godot/imported/decorative.png-26dce1bd01976400f7b3babcee3e5022.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/characters/ancel.png"
-dest_files=["res://.godot/imported/ancel.png-8d1693b8ccf510654b830a27948c7ded.ctex"]
+source_file="res://decorative.png"
+dest_files=["res://.godot/imported/decorative.png-26dce1bd01976400f7b3babcee3e5022.ctex"]
 
 [params]
 
