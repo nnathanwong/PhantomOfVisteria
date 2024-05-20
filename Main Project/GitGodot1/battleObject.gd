@@ -87,16 +87,10 @@ func store_command(command, turn):
 #New functions made by DEWEI
 #main use is for declaring enemy targets and enemy attacks
 func enemy_attack(target, enemy):
-	var current_position = enemy.global_position
-	var direction = (players[target].global_position - enemy.global_position).normalized()
+	var direction = (target.global_position - enemy.global_position).normalized()
 	var velocity = direction * 10 #walk to target's location
 	enemy.global_position += velocity #does not update all at once
 	$Slime.play("walk")
-	#stats.Ancel.takeDamage(self, damage_done) #not declared for now!
-	var direction_back = (current_position - enemy.global_position).normalized()
-	velocity = direction_back * 10 #walks back to starting position
-	get_child(0).play("walk")
-	move_and_slide()
 
 func focus():
 	cursor.show()
@@ -115,9 +109,9 @@ func _on_enemies_f_1g_1_new_turn(enemy_turn):
 		#Written by Dewei, trying to get all enemies to attack at the same time instead of only one being able to
 		for i in range(enemies.size()):
 			var enemy = $".."
-			var target = randi_range(0, players.size()-1)
-			enemy_attack(target, enemy.get_child(i))
-			enemy_turn = false
+			var player = players[i]
+			enemy_attack(player, enemy.get_child(i))
+		enemy_turn = false
 
 func turn_indicator(enemy_turn):
 	while not enemy_turn:
