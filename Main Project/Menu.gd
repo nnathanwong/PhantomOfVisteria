@@ -4,7 +4,7 @@ extends Control
 
 #Button Font used: https://fonts.google.com/specimen/Pixelify+Sans?query=pixel;
 func _on_start_pressed(): #start game, change scene to tile_map
-	get_tree().change_scene_to_file("res://GitGodot1/tile_map_REMOTE_435.tscn")
+	get_tree().change_scene_to_file("res://Dungeon/DungeonRoom1.tscn")
 
 
 func _on_credits_pressed(): #show credits
