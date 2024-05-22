@@ -5,16 +5,15 @@
 [ext_resource type="Script" path="res://GitGodot1/battle_log_text.gd" id="2_xk26k"]
 
 [node name="battle_log" type="Node2D"]
-visible = false
 
 [node name="window" type="Sprite2D" parent="."]
-position = Vector2(100, 7.4375)
-scale = Vector2(2.044, 0.159)
+position = Vector2(99.846, 9)
+scale = Vector2(0.389704, 0.0356436)
 texture = ExtResource("1_k1iaw")
 
 [node name="battle_log_text" type="Label" parent="."]
 offset_right = 200.0
-offset_bottom = 15.0
+offset_bottom = 19.0
 theme_override_fonts/font = ExtResource("2_c2gp1")
 theme_override_font_sizes/font_size = 15
 text = " "
