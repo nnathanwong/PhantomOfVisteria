@@ -10,6 +10,8 @@ const Commands = preload("res://globals/battle_instance.gd")
 var command = Commands.new()
 var battle_state
 var victory = null
+var win_status = false
+var end_game = true
 #FIXME: Temp comment out by Nathan as line below impeded with debugging/caused error
 #var party_members = get_node("battleParty").get_children()
 
@@ -17,17 +19,24 @@ func _ready():
 	$command_menu/command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
 
 func _process(delta):
-	signals.selectionState.connect(select)
-	if battle_state == false:
-		if victory == true:
-			$command_menu.hide()
-			await get_tree().create_timer(2.2).timeout
-			signals.change_batlog.emit("Victory!")
-			victory == null
-	var cur_num_enemies = len(get_child(5).get_children())
-	if cur_num_enemies <= 0:
-		battle_state = false
-		victory = true
+	if end_game:
+		if not win_status:
+			signals.selectionState.connect(select)
+			if battle_state == false:
+				if victory == true:
+					$command_menu.hide()
+					await get_tree().create_timer(2.2).timeout
+					signals.change_batlog.emit("Victory!")
+					victory == null
+			var cur_num_enemies = len(get_child(5).get_children())
+			if cur_num_enemies <= 0:
+				battle_state = false
+				victory = true
+		if win_status:
+			signals.change_batlog.emit("Defeat!")
+			var members = self.get_child(4)
+			members.queue_free()
+			end_game = false
 
 func select(count=0):
 	# Temp comment out by Nathan for debug.
@@ -41,6 +50,7 @@ func select(count=0):
 	'''
 	#$battle_map/enemies/SlimeBody/Slime/selection.visible = true
 	#$battle_map/enemies/SlimeBody/Slime/selection.grab_focus()
-	
 
+func _on_battle_party_detection(status):
+	win_status = status
 

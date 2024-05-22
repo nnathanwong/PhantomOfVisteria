@@ -55,8 +55,7 @@ func switchFocus(new, old):
 	enemies[new].focus()
 	enemies[old].unfocus()
 
-
 func _on_end_turn_pressed():
-	print('Ended Turn!')
+	#print('Ended Turn!')
 	var enemy_turn = true
 	emit_signal("new_turn", enemy_turn)

@@ -103,9 +103,9 @@ func unfocus():
 		button.hide()
 
 func _on_enemies_f_1g_1_new_turn(enemy_turn):
-	print('New Turn!')
+	#print('New Turn!')
 	while enemy_turn:
-		indicator.hide()
+		#indicator.hide()
 		enemies = $"..".get_children()
 		#Written by Dewei, trying to get all enemies to attack at the same time instead of only one being able to
 		for i in range(enemies.size()):

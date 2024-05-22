@@ -8,6 +8,7 @@ signal enemyDeath
 signal enemy_turn
 signal input_command(command, current_turn)
 signal command_menu_ready
+signal detection
 
 # UI Signals
 signal change_batlog
