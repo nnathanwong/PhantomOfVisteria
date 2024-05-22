@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccs1exjrnqxul"]
+[gd_scene load_steps=8 format=3 uid="uid://ccs1exjrnqxul"]
 
 [ext_resource type="Script" path="res://BattleParty/battleParty.gd" id="1_psrra"]
 [ext_resource type="Texture2D" uid="uid://jidsxe3ors0h" path="res://FFVIGraphics/Cursors/001-Cursor01.png" id="2_8wr52"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://csgclaawhtwx1" path="res://sprites/characters/lorane/right/27650892-b59d-4119-8014-46b9e9bf6756.png" id="2_y440e"]
 [ext_resource type="Texture2D" uid="uid://opkh7mbabb1b" path="res://sprites/characters/raflahn/right/93ca156a-0e6d-442f-9948-c8310cba7a3a.png" id="4_kpmul"]
 [ext_resource type="Texture2D" uid="uid://dq4gk6rydyfok" path="res://sprites/characters/younn/right/9ce08141-aef8-4e6a-b4b9-068c78767128.png" id="5_xeo5x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8gfdv"]
+radius = 6.0
+height = 22.0
 
 [node name="battleParty" type="Node2D"]
 script = ExtResource("1_psrra")
@@ -21,6 +25,12 @@ position = Vector2(-15, 1)
 scale = Vector2(0.390625, 0.296875)
 texture = ExtResource("2_8wr52")
 
+[node name="ancelArea" type="Area2D" parent="ancel"]
+
+[node name="ancelBox" type="CollisionShape2D" parent="ancel/ancelArea"]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_8gfdv")
+
 [node name="lorane" type="CharacterBody2D" parent="." groups=["battle_party"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="lorane"]
@@ -31,6 +41,12 @@ visible = false
 position = Vector2(-15, 1)
 scale = Vector2(0.390625, 0.3125)
 texture = ExtResource("2_8wr52")
+
+[node name="loraneArea" type="Area2D" parent="lorane"]
+
+[node name="loraneBox" type="CollisionShape2D" parent="lorane/loraneArea"]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_8gfdv")
 
 [node name="raflahn" type="CharacterBody2D" parent="." groups=["battle_party"]]
 
@@ -43,6 +59,12 @@ position = Vector2(-15, 1)
 scale = Vector2(0.4375, 0.296875)
 texture = ExtResource("2_8wr52")
 
+[node name="raflahnArea" type="Area2D" parent="raflahn"]
+
+[node name="raflahnBox" type="CollisionShape2D" parent="raflahn/raflahnArea"]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_8gfdv")
+
 [node name="younn" type="CharacterBody2D" parent="." groups=["battle_party"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="younn"]
@@ -53,3 +75,14 @@ visible = false
 position = Vector2(-15, 1)
 scale = Vector2(0.4375, 0.3125)
 texture = ExtResource("2_8wr52")
+
+[node name="younnArea" type="Area2D" parent="younn"]
+
+[node name="younnBox" type="CollisionShape2D" parent="younn/younnArea"]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_8gfdv")
+
+[connection signal="body_entered" from="ancel/ancelArea" to="." method="_on_ancel_area_body_entered"]
+[connection signal="body_entered" from="lorane/loraneArea" to="." method="_on_lorane_area_body_entered"]
+[connection signal="body_entered" from="raflahn/raflahnArea" to="." method="_on_raflahn_area_body_entered"]
+[connection signal="body_entered" from="younn/younnArea" to="." method="_on_younn_area_body_entered"]
