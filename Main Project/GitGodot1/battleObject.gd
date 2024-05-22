@@ -23,13 +23,13 @@ var execute = preload("res://globals/battle_instance.gd").new()
 @onready var players = get_tree().get_nodes_in_group("battle_party")
 var enemies: Array = []
 @onready var hpBar1 = $slimeBattle/hp1
-@onready var indicator = $indicator
 # FOCUS FUNCTIONS FOR CURSOR AND BUTTONS
 # Added by Nathan 4/17/2024
 
 @onready var cursor = self.get_child(1)
 # Line below gets slimeBattle, then Slime, and finally selection
 @onready var button = self.get_child(0).get_child(1)
+@onready var indicator = get_node("indicator")
 
 func _ready():
 	var enemyNode = self.name
@@ -105,6 +105,7 @@ func unfocus():
 func _on_enemies_f_1g_1_new_turn(enemy_turn):
 	print('New Turn!')
 	while enemy_turn:
+		indicator.hide()
 		enemies = $"..".get_children()
 		#Written by Dewei, trying to get all enemies to attack at the same time instead of only one being able to
 		for i in range(enemies.size()):
@@ -113,11 +114,8 @@ func _on_enemies_f_1g_1_new_turn(enemy_turn):
 			enemy_attack(player, enemy.get_child(i))
 		enemy_turn = false
 
-func turn_indicator(enemy_turn):
-	while not enemy_turn:
-		indicator.position.y += BattleInstance.current_turn * 20
-		print(indicator.position.y)
-	indicator.hide()
+func update_turn_indicator():
+		indicator = Vector2(0, BattleInstance.current_turn * 32)
 		
 func _on_selection_pressed():
 	button.hide()
@@ -127,6 +125,7 @@ func _on_selection_pressed():
 		# This decreases inflicted_damage by computed percentage
 		signals.change_batlog.emit("Attack")
 		get_child(0).HP -= round((execute.attack_enemy(current_turn)) * (float(100 - get_child(0).physical_defense)/100) * (randi_range(1,5)))
+	update_turn_indicator()
 	if BattleInstance.current_turn >= 4:
 		BattleInstance.current_turn = 0
 	hurt.play("hurt_animation")
