@@ -1,3 +1,4 @@
+
 extends Node2D
 
 @onready var hpbar1 = $battle_map/Party1Healthbar # Player 1 (Ancel's) Health bar

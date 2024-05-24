@@ -1500,27 +1500,27 @@ animation = &"Back Walk"
 position = Vector2(1, 8)
 shape = SubResource("CapsuleShape2D_5iubb")
 
-[node name="enemy" parent="TileMap" instance=ExtResource("5_odyrq")]
+[node name="enemy1" parent="TileMap" instance=ExtResource("5_odyrq")]
 position = Vector2(15.5, -7.5)
 collision_layer = 2
 collision_mask = 3
 collision_priority = 3.0
 
-[node name="Slime" parent="TileMap/enemy" index="0"]
+[node name="Slime" parent="TileMap/enemy1" index="0"]
 animation = &"walk"
 frame_progress = 0.0
 
-[node name="Detection" parent="TileMap/enemy" index="1"]
+[node name="Detection" parent="TileMap/enemy1" index="1"]
 light_mask = 2
 collision_mask = 2
 
-[node name="detection_radius" parent="TileMap/enemy/Detection" index="0"]
+[node name="detection_radius" parent="TileMap/enemy1/Detection" index="0"]
 debug_color = Color(1, 1, 1, 0.113725)
 
-[node name="Collision" parent="TileMap/enemy" index="2"]
+[node name="Collision" parent="TileMap/enemy1" index="2"]
 collision_mask = 2
 
-[node name="collision_radius" parent="TileMap/enemy/Collision" index="0"]
+[node name="collision_radius" parent="TileMap/enemy1/Collision" index="0"]
 debug_color = Color(0, 0, 0, 0.556863)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -1528,4 +1528,4 @@ position = Vector2(243, 87)
 scale = Vector2(3.03022, 0.467486)
 zoom = Vector2(2, 2)
 
-[editable path="TileMap/enemy"]
+[editable path="TileMap/enemy1"]
