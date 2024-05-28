@@ -1,5 +1,9 @@
 extends Node
 
+# General useful variables by Nathan (5/28/2024)
+var physical_attacks = ["Hard \nSlash", "Wave \nSlash", "Spinning \nEdge", "Shuriken"]
+var magic_attacks = ["Thunder", "Fire", "Blizzard", "Comet", "Holy", "Dark", "Soul \nDrain", "Meteor"]
+
 # STATS FOR ANCEL
 # Max stats
 var ancel_max_hp = 100

@@ -21,8 +21,10 @@ func strength(name):
 		var younn = PartyMemberStats.younn_strength + normal_damage
 		return younn
 
+# These calculations will happen in battle_instance.gd since it's confusing
+# to have the battle_instance calculations in two different scripts
 func magic():
-	var ancel = multiplier.Ancel.magic + magic_damage
+	var ancel = PartyMemberStats.ancel_magic + magic_damage
 	var lorane = multiplier.Lorane.magic + magic_damage
 	var raflahn = multiplier.Raflahn.magic + magic_damage
 	var younn = multiplier.Younn.magic + magic_damage

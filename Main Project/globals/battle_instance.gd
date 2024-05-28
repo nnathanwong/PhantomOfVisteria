@@ -33,3 +33,18 @@ func attack_enemy(issuer):
 		inflict_damage = attack.strength(3)
 		print("From battle_instance.gd: Younn hits!")
 	return inflict_damage
+
+func magic_attack(issuer):
+	var normal_magic = 5
+	# Ancel
+	if issuer == 0:
+		inflict_damage = PartyMemberStats.ancel_magic + normal_magic
+	elif issuer == 1:
+		inflict_damage = PartyMemberStats.lorane_magic + normal_magic
+	elif issuer == 2:
+		inflict_damage = PartyMemberStats.raflahn_magic + normal_magic
+	elif issuer == 3:
+		inflict_damage = PartyMemberStats.younn_magic + normal_magic
+	else:
+		print("Error in battle_instance.gd magic_attack")
+	return inflict_damage

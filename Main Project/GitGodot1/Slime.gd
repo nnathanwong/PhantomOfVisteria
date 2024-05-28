@@ -6,6 +6,7 @@ var physical_defense
 var magic_defense
 var damage_taken
 var damage
+var weaknesses
 var poison 
 var	bleed 
 var	burn 
@@ -29,10 +30,12 @@ func _ready():
 	self.play("idle")
 func _init(): #slime's stats
 	maxHP = 120
-	HP = 120
+	HP = 310
 	physical_defense = 5
 	magic_defense = 5
 	damage = 5
+	# Weaknesses added by Nathan on 5/28/2024
+	weaknesses = ["Fire", "Blizzard"]
 	poison = false
 	bleed = false
 	burn = false

@@ -16,4 +16,4 @@ func _on_skills_pressed():
 	# Younn
 	elif BattleInstance.current_turn == 3:
 		print("From skill_1.gd: Younn's skill")
-		text = "Spinning \nEdge"
+		text = "Shuriken"

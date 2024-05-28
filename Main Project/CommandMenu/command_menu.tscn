@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://btr57clcd5mtv"]
+[gd_scene load_steps=9 format=3 uid="uid://btr57clcd5mtv"]
 
 [ext_resource type="Texture2D" uid="uid://ds3cqer8eyl86" path="res://window.png.png" id="1_0j317"]
 [ext_resource type="Script" path="res://CommandMenu/command_menu.gd" id="1_dfgtb"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://CommandMenu/items_window.gd" id="4_aabcb"]
 [ext_resource type="Script" path="res://CommandMenu/skill_1.gd" id="4_kc8pm"]
 [ext_resource type="FontVariation" uid="uid://desskbxwj5v43" path="res://openSans.tres" id="4_luhr4"]
+[ext_resource type="Script" path="res://CommandMenu/skill_2.gd" id="6_ebmgv"]
+[ext_resource type="Script" path="res://CommandMenu/skill_3.gd" id="7_qh8rq"]
 
 [node name="command_menu" type="Control"]
 layout_mode = 3
@@ -103,13 +105,11 @@ script = ExtResource("4_kc8pm")
 custom_minimum_size = Vector2(135, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Protect"
 
 [node name="skill_7" type="Button" parent="skills_window/HBoxContainer/column_1"]
 custom_minimum_size = Vector2(135, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Blizzara"
 
 [node name="column_2" type="VBoxContainer" parent="skills_window/HBoxContainer"]
 layout_mode = 2
@@ -122,19 +122,17 @@ layout_mode = 2
 custom_minimum_size = Vector2(135, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Thunder"
+script = ExtResource("6_ebmgv")
 
 [node name="skill_5" type="Button" parent="skills_window/HBoxContainer/column_2"]
 custom_minimum_size = Vector2(135, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Shell"
 
 [node name="skill_8" type="Button" parent="skills_window/HBoxContainer/column_2"]
 custom_minimum_size = Vector2(135, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Thundara"
 
 [node name="column_3" type="VBoxContainer" parent="skills_window/HBoxContainer"]
 layout_mode = 2
@@ -147,19 +145,17 @@ layout_mode = 2
 custom_minimum_size = Vector2(135, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Cure"
+script = ExtResource("7_qh8rq")
 
 [node name="skill_6" type="Button" parent="skills_window/HBoxContainer/column_3"]
 custom_minimum_size = Vector2(135, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Cura"
 
 [node name="skill_9" type="Button" parent="skills_window/HBoxContainer/column_3"]
 custom_minimum_size = Vector2(135, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Regen"
 
 [node name="sp_cost" type="Sprite2D" parent="skills_window"]
 position = Vector2(290.201, 0.652173)
@@ -182,8 +178,9 @@ horizontal_alignment = 1
 
 [node name="label_cost_1" type="Label" parent="skills_window/sp_cost/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "3"
+theme_override_fonts/font = ExtResource("4_luhr4")
+theme_override_font_sizes/font_size = 80
+text = "2"
 horizontal_alignment = 1
 
 [node name="Separator" type="Control" parent="skills_window/sp_cost/VBoxContainer"]
@@ -194,8 +191,9 @@ layout_mode = 2
 
 [node name="label_cost_2" type="Label" parent="skills_window/sp_cost/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "6"
+theme_override_fonts/font = ExtResource("4_luhr4")
+theme_override_font_sizes/font_size = 80
+text = "4"
 horizontal_alignment = 1
 
 [node name="Separator3" type="Control" parent="skills_window/sp_cost/VBoxContainer"]
@@ -206,8 +204,9 @@ layout_mode = 2
 
 [node name="label_cost_3" type="Label" parent="skills_window/sp_cost/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 60
-text = "10"
+theme_override_fonts/font = ExtResource("4_luhr4")
+theme_override_font_sizes/font_size = 80
+text = "6"
 horizontal_alignment = 1
 
 [node name="items_window" type="Sprite2D" parent="."]
@@ -398,8 +397,12 @@ text = "10"
 [connection signal="pressed" from="command_ui/HBoxContainer/VBoxContainer/attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="command_ui/HBoxContainer/VBoxContainer/skills" to="." method="_on_skills_pressed"]
 [connection signal="pressed" from="command_ui/HBoxContainer/VBoxContainer/skills" to="skills_window/HBoxContainer/column_1/skill_1" method="_on_skills_pressed"]
+[connection signal="pressed" from="command_ui/HBoxContainer/VBoxContainer/skills" to="skills_window/HBoxContainer/column_2/skill_2" method="_on_skills_pressed"]
+[connection signal="pressed" from="command_ui/HBoxContainer/VBoxContainer/skills" to="skills_window/HBoxContainer/column_3/skill_3" method="_on_skills_pressed"]
 [connection signal="pressed" from="command_ui/HBoxContainer/VBoxContainer/items" to="." method="_on_items_pressed"]
 [connection signal="pressed" from="skills_window/HBoxContainer/column_1/skill_1" to="skills_window" method="_on_skill_1_pressed"]
+[connection signal="pressed" from="skills_window/HBoxContainer/column_2/skill_2" to="skills_window" method="_on_skill_2_pressed"]
+[connection signal="pressed" from="skills_window/HBoxContainer/column_3/skill_3" to="skills_window" method="_on_skill_3_pressed"]
 [connection signal="pressed" from="items_window/HBoxContainer/column_1/item_1" to="items_window" method="_on_item_1_pressed"]
 [connection signal="pressed" from="items_window/HBoxContainer/column_1/item_4" to="items_window" method="_on_item_4_pressed"]
 [connection signal="pressed" from="items_window/HBoxContainer/column_1/item_7" to="items_window" method="_on_item_7_pressed"]

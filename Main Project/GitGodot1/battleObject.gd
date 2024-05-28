@@ -80,11 +80,10 @@ func check_for_freeze():
 			else:
 				pass
 
-#Last modified by Nathan on 5/27/2024
-func store_command(command, turn=null):
+
+func store_command(command, turn):
 	command_given = command
-	if turn != null:
-		current_turn = turn
+	current_turn = turn
 
 #New functions made by DEWEI
 #main use is for declaring enemy targets and enemy attacks
@@ -120,7 +119,10 @@ func update_turn_indicator():
 		indicator = Vector2(0, BattleInstance.current_turn * 32)
 		
 func _on_selection_pressed():
+	var enemy = get_child(0)
 	var enemy_turn = false
+	var physical_calculation = round( (execute.attack_enemy(current_turn)) * (float(100 - enemy.physical_defense)/100) )
+	var magic_calculation = round( (execute.magic_attack(current_turn)) * (float(100 - enemy.magic_defense)/100) )
 	button.hide()
 	signals.nextTurn.emit()
 	# Processing battle commands
@@ -128,10 +130,17 @@ func _on_selection_pressed():
 		# Second part of expression below computes percentage value to multiply the inflicted_damage amount with. 
 		# This decreases inflicted_damage by computed percentage
 		signals.change_batlog.emit("Attack")
-		get_child(0).HP -= round((execute.attack_enemy(current_turn)) * (float(100 - get_child(0).physical_defense)/100) * (randi_range(1,3)))
+		enemy.HP -= physical_calculation * (randi_range(1,3))
+	# Skills
 	elif command_given == "Hard \nSlash":
 		signals.change_batlog.emit("Hard Slash")
-		get_child(0).HP -= round((execute.attack_enemy(current_turn)) * (float(100 - get_child(0).physical_defense)/100) * (randi_range(4,6)))
+		enemy.HP -= physical_calculation * (randi_range(4,5))
+	elif command_given in PartyMemberStats.magic_attacks:
+		signals.change_batlog.emit(command_given)
+		if command_given in enemy.weaknesses:
+			enemy.HP -= magic_calculation * (randi_range(5,6))
+		else:
+			enemy.HP -= magic_calculation * (randi_range(1,3))
 	update_turn_indicator()
 	if BattleInstance.current_turn >= 4:
 		return not enemy_turn
