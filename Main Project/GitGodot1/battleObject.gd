@@ -132,7 +132,6 @@ func _on_selection_pressed():
 	elif command_given == "Hard \nSlash":
 		signals.change_batlog.emit("Hard Slash")
 		get_child(0).HP -= round((execute.attack_enemy(current_turn)) * (float(100 - get_child(0).physical_defense)/100) * (randi_range(4,6)))
-	update_turn_indicator()
 	if BattleInstance.current_turn >= 4:
 		return not enemy_turn
 		BattleInstance.current_turn = 0
