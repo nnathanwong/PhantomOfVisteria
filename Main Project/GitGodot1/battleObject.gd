@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var maxHP
 var HP
+var enemy
 var physical_defense
 var magic_defense
 var damage_taken
@@ -70,7 +71,7 @@ func check_for_confusion():
 				pass
 			else:
 				pass
-					
+
 func check_for_freeze():
 	for i in enemies:
 		if i.freeze == true:
@@ -116,8 +117,8 @@ func _on_enemies_f_1g_1_new_turn():
 		enemy_turn = false
 
 func update_turn_indicator():
-		indicator = Vector2(0, BattleInstance.current_turn * 32)
-		
+	indicator = Vector2(0, BattleInstance.current_turn * 32)
+
 func _on_selection_pressed():
 	var enemy = get_child(0)
 	var enemy_turn = false

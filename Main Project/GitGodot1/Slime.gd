@@ -28,6 +28,7 @@ var current_position = self.global_position
 
 func _ready():
 	self.play("idle")
+
 func _init(): #slime's stats
 	maxHP = 120
 	HP = 310
