@@ -31,34 +31,31 @@ func _unhandled_input(event):
 				$skills_window.visible = false
 				$command_ui.visible = true
 				$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
-				BattleInstance.current_turn -= 1
 			elif $items_window.visible == true:
 				$items_window.visible = false
 				$command_ui.visible = true
 				$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
-				BattleInstance.current_turn -= 1
 
 func _on_attack_pressed():
 	signals.selectionState.emit()
 	signals.input_command.emit("attack", BattleInstance.current_turn)
 	$command_ui.visible = false
-	BattleInstance.current_turn += 1
 
 func _on_skills_pressed():
 	$skills_window.visible = true
-	$command_ui.visible = false
 	$skills_window/HBoxContainer/column_1/skill_1.grab_focus()
-	BattleInstance.current_turn += 1
 
 func _on_items_pressed():
 	$items_window.visible = true
 	$command_ui.visible = false
 	$items_window/HBoxContainer/column_1/item_1.grab_focus()
-	BattleInstance.current_turn += 1
 
+# Modified by Nathan on 5/27/2024
 func next_turn():
-	$command_ui.visible = false
+	for node in get_children():
+		node.visible = false
 	await get_tree().create_timer(2).timeout
+	self.visible = true
 	$command_ui.visible = true
 	$command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
 

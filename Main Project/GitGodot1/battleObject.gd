@@ -79,10 +79,12 @@ func check_for_freeze():
 				i.freeze = false
 			else:
 				pass
-					
-func store_command(command, turn):
+
+#Last modified by Nathan on 5/27/2024
+func store_command(command, turn=null):
 	command_given = command
-	current_turn = turn
+	if turn != null:
+		current_turn = turn
 
 #New functions made by DEWEI
 #main use is for declaring enemy targets and enemy attacks
@@ -121,15 +123,21 @@ func _on_selection_pressed():
 	var enemy_turn = false
 	button.hide()
 	signals.nextTurn.emit()
+	# Processing battle commands
 	if command_given == "attack":
 		# Second part of expression below computes percentage value to multiply the inflicted_damage amount with. 
 		# This decreases inflicted_damage by computed percentage
 		signals.change_batlog.emit("Attack")
-		get_child(0).HP -= round((execute.attack_enemy(current_turn)) * (float(100 - get_child(0).physical_defense)/100) * (randi_range(1,5)))
+		get_child(0).HP -= round((execute.attack_enemy(current_turn)) * (float(100 - get_child(0).physical_defense)/100) * (randi_range(1,3)))
+	elif command_given == "Hard \nSlash":
+		signals.change_batlog.emit("Hard Slash")
+		get_child(0).HP -= round((execute.attack_enemy(current_turn)) * (float(100 - get_child(0).physical_defense)/100) * (randi_range(4,6)))
 	update_turn_indicator()
 	if BattleInstance.current_turn >= 4:
 		return not enemy_turn
 		BattleInstance.current_turn = 0
+	else:
+		BattleInstance.current_turn += 1
 	hurt.play("hurt_animation")
 	damaged.start()
 	await damaged.timeout

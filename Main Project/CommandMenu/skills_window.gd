@@ -9,3 +9,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_skill_1_pressed():
+	signals.selectionState.emit()
+	signals.input_command.emit($HBoxContainer/column_1/skill_1.text)

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://btr57clcd5mtv"]
+[gd_scene load_steps=7 format=3 uid="uid://btr57clcd5mtv"]
 
 [ext_resource type="Texture2D" uid="uid://ds3cqer8eyl86" path="res://window.png.png" id="1_0j317"]
 [ext_resource type="Script" path="res://CommandMenu/command_menu.gd" id="1_dfgtb"]
 [ext_resource type="Script" path="res://CommandMenu/skills_window.gd" id="3_7ujhi"]
 [ext_resource type="Script" path="res://CommandMenu/items_window.gd" id="4_aabcb"]
+[ext_resource type="Script" path="res://CommandMenu/skill_1.gd" id="4_kc8pm"]
+[ext_resource type="FontVariation" uid="uid://desskbxwj5v43" path="res://openSans.tres" id="4_luhr4"]
 
 [node name="command_menu" type="Control"]
 layout_mode = 3
@@ -93,8 +95,9 @@ layout_mode = 2
 [node name="skill_1" type="Button" parent="skills_window/HBoxContainer/column_1"]
 custom_minimum_size = Vector2(135, 100)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_luhr4")
 theme_override_font_sizes/font_size = 30
-text = "Blizzard"
+script = ExtResource("4_kc8pm")
 
 [node name="skill_4" type="Button" parent="skills_window/HBoxContainer/column_1"]
 custom_minimum_size = Vector2(135, 100)
@@ -394,7 +397,9 @@ text = "10"
 
 [connection signal="pressed" from="command_ui/HBoxContainer/VBoxContainer/attack" to="." method="_on_attack_pressed"]
 [connection signal="pressed" from="command_ui/HBoxContainer/VBoxContainer/skills" to="." method="_on_skills_pressed"]
+[connection signal="pressed" from="command_ui/HBoxContainer/VBoxContainer/skills" to="skills_window/HBoxContainer/column_1/skill_1" method="_on_skills_pressed"]
 [connection signal="pressed" from="command_ui/HBoxContainer/VBoxContainer/items" to="." method="_on_items_pressed"]
+[connection signal="pressed" from="skills_window/HBoxContainer/column_1/skill_1" to="skills_window" method="_on_skill_1_pressed"]
 [connection signal="pressed" from="items_window/HBoxContainer/column_1/item_1" to="items_window" method="_on_item_1_pressed"]
 [connection signal="pressed" from="items_window/HBoxContainer/column_1/item_4" to="items_window" method="_on_item_4_pressed"]
 [connection signal="pressed" from="items_window/HBoxContainer/column_1/item_7" to="items_window" method="_on_item_7_pressed"]
