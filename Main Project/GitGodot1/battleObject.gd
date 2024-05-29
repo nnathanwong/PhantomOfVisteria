@@ -125,6 +125,7 @@ func _on_selection_pressed():
 	var physical_calculation = round( (execute.attack_enemy(current_turn)) * (float(100 - enemy.physical_defense)/100) )
 	var magic_calculation = round( (execute.magic_attack(current_turn)) * (float(100 - enemy.magic_defense)/100) )
 	button.hide()
+	signals.nextTurn.emit()
 	# Processing battle commands
 	if command_given == "attack":
 		# Second part of expression below computes percentage value to multiply the inflicted_damage amount with. 
@@ -151,5 +152,4 @@ func _on_selection_pressed():
 	damaged.start()
 	await damaged.timeout
 	hurt.play("RESET")
-	signals.nextTurn.emit()
 	#healthbar.value = HP

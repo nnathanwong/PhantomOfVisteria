@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dvm775q85pdrb"]
+[gd_scene load_steps=12 format=3 uid="uid://dvm775q85pdrb"]
 
 [ext_resource type="PackedScene" uid="uid://btr57clcd5mtv" path="res://CommandMenu/command_menu.tscn" id="1_pd252"]
 [ext_resource type="Texture2D" uid="uid://ba8mkdywycf3y" path="res://FFVIGraphics/Battlebacks/005-Forest01.png" id="1_unjyp"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://BattleScenesFloor1/indicator.gd" id="5_a3qve"]
 [ext_resource type="PackedScene" uid="uid://csvc6xgw2ic1u" path="res://slime_healthbar.tscn" id="7_2nald"]
 [ext_resource type="PackedScene" uid="uid://bdo68nv0qe5gd" path="res://GitGodot1/battle_log.tscn" id="9_ne7ls"]
+[ext_resource type="PackedScene" uid="uid://djio8u44mtymg" path="res://GitGodot1/sp_bars.tscn" id="11_4lnfm"]
 
 [node name="Group1" type="Node2D"]
 script = ExtResource("1_wbwej")
@@ -61,6 +62,7 @@ expand_mode = 1
 metadata/_edit_lock_ = true
 
 [node name="endTurn" type="Button" parent="."]
+visible = false
 offset_left = 272.0
 offset_top = 240.0
 offset_right = 350.0
@@ -77,5 +79,8 @@ offset_bottom = 105.0
 [node name="battle_log" parent="." instance=ExtResource("9_ne7ls")]
 visible = false
 position = Vector2(81, 2)
+
+[node name="sp_bars" parent="." instance=ExtResource("11_4lnfm")]
+position = Vector2(71, 212)
 
 [connection signal="detection" from="battleParty" to="." method="_on_battle_party_detection"]

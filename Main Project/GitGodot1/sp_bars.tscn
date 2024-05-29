@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://djio8u44mtymg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22xwi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpjtm"]
+bg_color = Color(0, 0, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+
+[node name="sp_bars" type="Node2D"]
+
+[node name="ancel" type="LineEdit" parent="."]
+offset_right = 45.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 10
+text = "Ancel"
+alignment = 1
+flat = true
+
+[node name="lorane" type="LineEdit" parent="."]
+offset_top = 24.0
+offset_right = 45.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 10
+text = " Lorane"
+alignment = 1
+flat = true
+
+[node name="raflahn" type="LineEdit" parent="."]
+offset_left = 133.0
+offset_top = 1.0
+offset_right = 180.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 10
+text = "Raflahn"
+alignment = 1
+flat = true
+
+[node name="younn" type="LineEdit" parent="."]
+offset_left = 133.0
+offset_top = 26.0
+offset_right = 178.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 10
+text = "Younn"
+alignment = 1
+flat = true
+
+[node name="ancel_sp" type="ProgressBar" parent="."]
+offset_left = 44.0
+offset_top = 2.0
+offset_right = 124.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 7
+theme_override_styles/background = SubResource("StyleBoxFlat_22xwi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mpjtm")
+value = 100.0
+
+[node name="lorane_sp" type="ProgressBar" parent="."]
+offset_left = 44.0
+offset_top = 31.0
+offset_right = 124.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 7
+theme_override_styles/background = SubResource("StyleBoxFlat_22xwi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mpjtm")
+value = 100.0
+
+[node name="raflahn_sp" type="ProgressBar" parent="."]
+offset_left = 181.0
+offset_top = 2.0
+offset_right = 261.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 7
+theme_override_styles/background = SubResource("StyleBoxFlat_22xwi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mpjtm")
+value = 100.0
+
+[node name="younn_sp" type="ProgressBar" parent="."]
+offset_left = 181.0
+offset_top = 31.0
+offset_right = 261.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 7
+theme_override_styles/background = SubResource("StyleBoxFlat_22xwi")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mpjtm")
+value = 100.0

@@ -47,6 +47,7 @@ func _process(delta):
 
 # Added by Nathan on 5/28/2024
 func change_indicator():
+	await get_tree().create_timer(2).timeout
 	if BattleInstance.current_turn == 0:
 		ancel_indicator.visible = true
 		lorane_indicator.visible = false
