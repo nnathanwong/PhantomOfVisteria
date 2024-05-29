@@ -104,8 +104,7 @@ func unfocus():
 	if button != null:
 		button.hide()
 
-func _on_enemies_f_1g_1_new_turn():
-	var enemy_turn = await _on_selection_pressed()
+func _on_enemies_f_1g_1_new_turn(enemy_turn):
 	while enemy_turn:
 		#indicator.hide()
 		enemies = $"..".get_children()
@@ -121,7 +120,6 @@ func update_turn_indicator():
 
 func _on_selection_pressed():
 	var enemy = get_child(0)
-	var enemy_turn = false
 	var physical_calculation = round( (execute.attack_enemy(current_turn)) * (float(100 - enemy.physical_defense)/100) )
 	var magic_calculation = round( (execute.magic_attack(current_turn)) * (float(100 - enemy.magic_defense)/100) )
 	button.hide()
@@ -143,9 +141,9 @@ func _on_selection_pressed():
 		else:
 			enemy.HP -= magic_calculation * (randi_range(1,3))
 	update_turn_indicator()
-	if BattleInstance.current_turn >= 4:
+	if BattleInstance.current_turn >= 3:
 		BattleInstance.current_turn = 0
-		return not enemy_turn
+		_on_enemies_f_1g_1_new_turn(true)
 	else:
 		BattleInstance.current_turn += 1
 	hurt.play("hurt_animation")
