@@ -10,43 +10,20 @@ var status = false
 var ancel_indicator
 var lorane_indicator
 var raflahn_indicator
-var younn_indicator
+var younn_indicator = null
 signal detection(status)
 
-# Added by Nathan on 5/28/2024
 func _ready():
 	partyMembers = get_children()
 	for i in range(partyMembers.size()):
 		partyMembers[i].position = Vector2(0,i*32)
-		if i == 0:
-			ancel_indicator = partyMembers[i].get_child(2)
-		if i == 1:
-			lorane_indicator = partyMembers[i].get_child(2)
-		if i == 2:
-			raflahn_indicator = partyMembers[i].get_child(2)
-		if i == 3:
-			younn_indicator = partyMembers[i].get_child(2)
-	if BattleInstance.current_turn == 0:
-		ancel_indicator.visible = true
+	var ancel_indicator = self.get_child(0).get_child(2)
+	var lorane_indicator = self.get_child(1).get_child(2)
+	var raflahn_indicator = self.get_child(2).get_child(2)
+	var younn_indicator = self.get_child(3).get_child(2)
 
 
 func _process(delta):
-	signals.nextTurn.connect(change_indicator)
-	'''
-	partyMembers = get_children()
-	var enemy_turn = await object._on_selection_pressed()
-	var indicator = partyMembers[0].get_child(2)
-	while enemy_turn == false:
-		if BattleInstance.current_turn == 1:
-			partyMembers[0].get_child(2).show()
-		else:
-			partyMembers[BattleInstance.current_turn - 1].get_child(2).show()
-			partyMembers[BattleInstance.current_turn].get_child(2).hide()
-	partyMembers[3].get_child(2).hide()
-	'''
-
-# Added by Nathan on 5/28/2024
-func change_indicator():
 	if BattleInstance.current_turn == 0:
 		ancel_indicator.visible = true
 		lorane_indicator.visible = false
@@ -67,6 +44,18 @@ func change_indicator():
 		lorane_indicator.visible = false
 		raflahn_indicator.visible = false
 		younn_indicator.visible = true
+	'''
+	partyMembers = get_children()
+	var enemy_turn = await object._on_selection_pressed()
+	var indicator = partyMembers[0].get_child(2)
+	while enemy_turn == false:
+		if BattleInstance.current_turn == 1:
+			partyMembers[0].get_child(2).show()
+		else:
+			partyMembers[BattleInstance.current_turn - 1].get_child(2).show()
+			partyMembers[BattleInstance.current_turn].get_child(2).hide()
+	partyMembers[3].get_child(2).hide()
+	'''
 
 func _on_ancel_area_body_entered(body):
 	if body.get_parent().name == "slimeBattle":
@@ -89,3 +78,4 @@ func _on_younn_area_body_entered(body):
 	if body.get_parent().name == "enemiesF1G1":
 		status = true
 		emit_signal("detection", status)
+

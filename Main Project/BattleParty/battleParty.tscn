@@ -28,9 +28,9 @@ texture = ExtResource("2_8wr52")
 
 [node name="indicator" type="Sprite2D" parent="ancel"]
 visible = false
-position = Vector2(57, 57)
+position = Vector2(0, -15)
 rotation = 1.5708
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.5)
 texture = ExtResource("4_7dopg")
 
 [node name="ancelArea" type="Area2D" parent="ancel"]
@@ -52,9 +52,9 @@ texture = ExtResource("2_8wr52")
 
 [node name="indicator" type="Sprite2D" parent="lorane"]
 visible = false
-position = Vector2(57, 57)
+position = Vector2(0, -15)
 rotation = 1.5708
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.5)
 texture = ExtResource("4_7dopg")
 
 [node name="loraneArea" type="Area2D" parent="lorane"]
@@ -76,9 +76,9 @@ texture = ExtResource("2_8wr52")
 
 [node name="indicator" type="Sprite2D" parent="raflahn"]
 visible = false
-position = Vector2(57, 57)
+position = Vector2(0, -15)
 rotation = 1.5708
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.5)
 texture = ExtResource("4_7dopg")
 
 [node name="raflahnArea" type="Area2D" parent="raflahn"]
@@ -100,9 +100,9 @@ texture = ExtResource("2_8wr52")
 
 [node name="indicator" type="Sprite2D" parent="younn"]
 visible = false
-position = Vector2(57, 57)
+position = Vector2(0, -15)
 rotation = 1.5708
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.4, 0.5)
 texture = ExtResource("4_7dopg")
 
 [node name="younnArea" type="Area2D" parent="younn"]
