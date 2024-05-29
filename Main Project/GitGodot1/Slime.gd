@@ -31,7 +31,7 @@ func _ready():
 
 func _init(): #slime's stats
 	maxHP = 120
-	HP = 310
+	HP = 1
 	physical_defense = 5
 	magic_defense = 5
 	damage = 5

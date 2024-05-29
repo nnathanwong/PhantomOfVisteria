@@ -36,7 +36,8 @@ func _process(delta):
 		# Added by Nathan on 4/24/2024
 		elif Input.is_action_just_pressed("ui_accept"):
 			selectionState = false
-			enemies[index].get_child(1).hide()
+			if enemies[index].get_child(1) != null:
+				enemies[index].get_child(1).hide()
 			'''
 			if BattleInstance != null:
 				BattleInstance.selected_enemy = index
