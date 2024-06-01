@@ -5,6 +5,10 @@ extends Node2D
 @onready var hpbar2 = $battle_map/Party2Healthbar # Player 1 (Ancel's) Health bar
 @onready var hpbar3 = $battle_map/Party3Healthbar # Player 1 (Ancel's) Health bar
 @onready var hpbar4 = $battle_map/Party4Healthbar # Player 1 (Ancel's) Health bar
+@onready var ancel = self.get_child(4).get_child(0).get_child(4)
+@onready var lorane = self.get_child(4).get_child(1).get_child(4)
+@onready var raflahn = self.get_child(4).get_child(2).get_child(4)
+@onready var younn = self.get_child(4).get_child(3).get_child(4)
 
 # Added by Nathan on 4/26/2024
 const Commands = preload("res://globals/battle_instance.gd")
@@ -20,6 +24,10 @@ func _ready():
 	$command_menu/command_ui/HBoxContainer/VBoxContainer/attack.grab_focus()
 
 func _process(delta):
+	ancel.play("default")
+	lorane.play("default")
+	raflahn.play("default")
+	younn.play("default")
 	if end_game:
 		if not win_status:
 			signals.selectionState.connect(select)

@@ -89,10 +89,10 @@ func store_command(command, turn):
 #New functions made by DEWEI
 #main use is for declaring enemy targets and enemy attacks
 func enemy_attack(target, enemy):
+	$Slime.play("walk")
 	var direction = (target.global_position - enemy.global_position).normalized()
 	var velocity = direction * 10 #walk to target's location
 	enemy.global_position += velocity #does not update all at once
-	$Slime.play("walk")
 
 func focus():
 	cursor.show()
