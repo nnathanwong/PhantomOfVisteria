@@ -6,8 +6,8 @@ Team members must familiarize themselves with GScript 4.0.
 
 Download and install Godot 4.0 (this game runs using Godot 4.0 and GDScript 4.0) using these links:
 
-Godot for Windows:
-- https://godotengine.org/download/windows/
+- Windows: https://godotengine.org/download/windows/
+- Mac: https://godotengine.org/download/macos/
 
 ## Getting started
 
