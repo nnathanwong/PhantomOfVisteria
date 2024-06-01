@@ -1,4 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://djio8u44mtymg"]
+[gd_scene load_steps=7 format=3 uid="uid://djio8u44mtymg"]
+
+[ext_resource type="Script" path="res://GitGodot1/ancel_sp.gd" id="1_xyb6k"]
+[ext_resource type="Script" path="res://GitGodot1/lorane_sp.gd" id="2_qwux6"]
+[ext_resource type="Script" path="res://GitGodot1/raflahn_sp.gd" id="3_kc0ap"]
+[ext_resource type="Script" path="res://GitGodot1/younn_sp.gd" id="4_yrb0g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22xwi"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -62,7 +67,9 @@ offset_bottom = 19.0
 theme_override_font_sizes/font_size = 7
 theme_override_styles/background = SubResource("StyleBoxFlat_22xwi")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mpjtm")
-value = 100.0
+max_value = 10.0
+value = 10.0
+script = ExtResource("1_xyb6k")
 
 [node name="lorane_sp" type="ProgressBar" parent="."]
 offset_left = 44.0
@@ -72,7 +79,9 @@ offset_bottom = 48.0
 theme_override_font_sizes/font_size = 7
 theme_override_styles/background = SubResource("StyleBoxFlat_22xwi")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mpjtm")
-value = 100.0
+max_value = 55.0
+value = 55.0
+script = ExtResource("2_qwux6")
 
 [node name="raflahn_sp" type="ProgressBar" parent="."]
 offset_left = 181.0
@@ -83,6 +92,7 @@ theme_override_font_sizes/font_size = 7
 theme_override_styles/background = SubResource("StyleBoxFlat_22xwi")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mpjtm")
 value = 100.0
+script = ExtResource("3_kc0ap")
 
 [node name="younn_sp" type="ProgressBar" parent="."]
 offset_left = 181.0
@@ -93,3 +103,4 @@ theme_override_font_sizes/font_size = 7
 theme_override_styles/background = SubResource("StyleBoxFlat_22xwi")
 theme_override_styles/fill = SubResource("StyleBoxFlat_mpjtm")
 value = 100.0
+script = ExtResource("4_yrb0g")

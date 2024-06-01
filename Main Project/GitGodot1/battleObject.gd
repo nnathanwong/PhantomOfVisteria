@@ -122,6 +122,7 @@ func _on_selection_pressed():
 	var enemy = get_child(0)
 	var physical_calculation = round( (execute.attack_enemy(current_turn)) * (float(100 - enemy.physical_defense)/100) )
 	var magic_calculation = round( (execute.magic_attack(current_turn)) * (float(100 - enemy.magic_defense)/100) )
+	var character_sp = PartyMemberStats.turn_character_sp(current_turn)
 	button.hide()
 	signals.nextTurn.emit()
 	# Processing battle commands
@@ -133,9 +134,13 @@ func _on_selection_pressed():
 	# Skills
 	elif command_given == "Hard \nSlash":
 		signals.change_batlog.emit("Hard Slash")
+		character_sp -= PartyMemberStats.sp_cost[command_given]
+		signals.update_sp.emit(character_sp)
 		enemy.HP -= physical_calculation * (randi_range(4,5))
 	elif command_given in PartyMemberStats.magic_attacks:
 		signals.change_batlog.emit(command_given)
+		character_sp -= PartyMemberStats.sp_cost[command_given]
+		signals.update_sp.emit(character_sp)
 		if command_given in enemy.weaknesses:
 			enemy.HP -= magic_calculation * (randi_range(5,6))
 		else:

@@ -3,11 +3,32 @@ extends Node
 # General useful variables by Nathan (5/28/2024)
 var physical_attacks = ["Hard \nSlash", "Wave \nSlash", "Spinning \nEdge", "Shuriken"]
 var magic_attacks = ["Thunder", "Fire", "Blizzard", "Comet", "Holy", "Dark", "Soul \nDrain", "Meteor"]
+var sp_cost = {
+	"Hard \nSlash" : 2,
+	"Wave \nSlash" : 2,
+	"Thunder" : 2,
+	"Fire" : 2,
+	"Blizzard" : 2,
+	"Dark" : 2,
+	"Shurriken" : 2
+	}
+
+# Turn to character conversion
+func turn_character_sp(turn):
+	if turn == 0:
+		return PartyMemberStats.ancel_sp
+	elif turn == 1:
+		return PartyMemberStats.lorane_sp
+	elif turn == 2:
+		return PartyMemberStats.raflahn_sp
+	elif turn == 3:
+		return PartyMemberStats.younn_sp
+	
 
 # STATS FOR ANCEL
 # Max stats
 var ancel_max_hp = 100
-var ancel_max_sp = 10
+var ancel_max_sp = 15
 # Current stats
 var ancel_hp = ancel_max_hp
 var ancel_sp = ancel_max_sp
@@ -23,7 +44,7 @@ var ancel_confusion = false
 # STATS FOR LORANE
 # Max stats
 var lorane_max_hp =  126
-var lorane_max_sp = 40
+var lorane_max_sp = 55
 # Current stats
 var lorane_hp = lorane_max_hp
 var lorane_sp = lorane_max_sp
@@ -39,7 +60,7 @@ var lorane_confusion = false
 # STATS FOR RAFLAHN
 # Max stats
 var raflahn_max_hp : int = 180
-var raflahn_max_sp : int = 50
+var raflahn_max_sp : int = 65
 # Current stats
 var raflahn_hp = raflahn_max_hp
 var raflahn_sp = raflahn_max_sp
@@ -55,7 +76,7 @@ var raflahn_confusion = false
 # STATS FOR YOUNN
 # Max stats
 var younn_max_hp = 230
-var younn_max_sp = 20
+var younn_max_sp = 35
 # Current stats
 var younn_hp = younn_max_hp
 var younn_sp = younn_max_sp
