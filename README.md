@@ -9,6 +9,8 @@ Download and install Godot 4.0 (this game runs using Godot 4.0 and GDScript 4.0)
 - Windows: https://godotengine.org/download/windows/
 - Mac: https://godotengine.org/download/macos/
 
+Clone the current repository locally on your computer.
+
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
