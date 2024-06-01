@@ -10,7 +10,16 @@ Download and install Godot 4.0 (this game runs using Godot 4.0 and GDScript 4.0)
 - Mac: https://godotengine.org/download/macos/
 
 Clone the current repository locally on your computer.
-Open Godot and click the import button at the top when Godot starts up. Import, from the cloned local repository, the folder called "Main Project".
+
+Open Godot and click the import button at the top when Godot starts up. Import, from the cloned local repository, the folder called "Main Project". Now, you are ready to begin working on the project!
+
+## Testing
+
+To run the game for testing, there is a play button icon at the top right corner of the screen. Click the play button and you may now begin testing.
+
+**Battle**
+
+Since Phantom of Visteria's combat system draws from turn-based combat elements, most of the combat elements can be debugged/tested by using print statements to determine whose turn it should be at the moment, what the current HP is of one of the characters, etc. In the battle scene itself, the user can only interface with the game via keyboard, so using the command menu requires using the arrow keys, the backspace key, and the enter key.
 
 ## Getting started
 
