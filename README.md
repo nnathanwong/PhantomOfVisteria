@@ -10,6 +10,7 @@ Download and install Godot 4.0 (this game runs using Godot 4.0 and GDScript 4.0)
 - Mac: https://godotengine.org/download/macos/
 
 Clone the current repository locally on your computer.
+Open Godot and click the import button at the top when Godot starts up. Import, from the cloned local repository, the folder called "Main Project".
 
 ## Getting started
 
