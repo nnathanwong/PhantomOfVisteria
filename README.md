@@ -19,7 +19,7 @@ To run the game for testing, there is a play button icon at the top right corner
 
 **Battle**
 
-Since Phantom of Visteria's combat system draws from turn-based combat elements, most of the combat elements can be debugged/tested by using print statements to determine whose turn it should be at the moment, what the current HP is of one of the characters, etc. In the battle scene itself, the user can only interface with the game via keyboard, so using the command menu requires using the arrow keys, the backspace key, and the enter key.
+Since Phantom of Visteria's combat system draws from turn-based combat elements, most of the combat elements can easily be debugged/tested by using print statements to determine whose turn it should be at the moment, what the current HP is of one of the characters, etc. In the battle scene itself, the user can only interface with the game via keyboard, so using the command menu requires using the arrow keys, the backspace key, and the enter key.
 
 ## Getting started
 
