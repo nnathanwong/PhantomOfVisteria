@@ -227,11 +227,13 @@ texture = ExtResource("2_mr8o4")
 hframes = 7
 
 [node name="cursor" type="Sprite2D" parent="ancel"]
+visible = false
 position = Vector2(-15, 1)
 scale = Vector2(0.390625, 0.296875)
 texture = ExtResource("2_8wr52")
 
 [node name="indicator" type="Sprite2D" parent="ancel"]
+visible = false
 position = Vector2(0, -15)
 rotation = 1.5708
 scale = Vector2(0.4, 0.5)
@@ -255,11 +257,13 @@ visible = false
 texture = ExtResource("2_y440e")
 
 [node name="cursor" type="Sprite2D" parent="lorane"]
+visible = false
 position = Vector2(-15, 1)
 scale = Vector2(0.390625, 0.3125)
 texture = ExtResource("2_8wr52")
 
 [node name="indicator" type="Sprite2D" parent="lorane"]
+visible = false
 position = Vector2(0, -15)
 rotation = 1.5708
 scale = Vector2(0.4, 0.5)
@@ -282,11 +286,13 @@ visible = false
 texture = ExtResource("4_kpmul")
 
 [node name="cursor" type="Sprite2D" parent="raflahn"]
+visible = false
 position = Vector2(-15, 1)
 scale = Vector2(0.4375, 0.296875)
 texture = ExtResource("2_8wr52")
 
 [node name="indicator" type="Sprite2D" parent="raflahn"]
+visible = false
 position = Vector2(0, -15)
 rotation = 1.5708
 scale = Vector2(0.4, 0.5)
@@ -310,11 +316,13 @@ visible = false
 texture = ExtResource("5_xeo5x")
 
 [node name="cursor" type="Sprite2D" parent="younn"]
+visible = false
 position = Vector2(-15, 1)
 scale = Vector2(0.4375, 0.3125)
 texture = ExtResource("2_8wr52")
 
 [node name="indicator" type="Sprite2D" parent="younn"]
+visible = false
 position = Vector2(0, -15)
 rotation = 1.5708
 scale = Vector2(0.4, 0.5)

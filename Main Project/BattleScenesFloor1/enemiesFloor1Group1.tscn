@@ -20,15 +20,4 @@ shape = SubResource("CircleShape2D_bhyh4")
 [node name="slimeTwoBox" type="CollisionShape2D" parent="slimeBattle2"]
 shape = SubResource("CircleShape2D_bhyh4")
 
-[node name="slimeBattle3" parent="." instance=ExtResource("2_g4kd5")]
-
-[node name="slimeThreeBox" type="CollisionShape2D" parent="slimeBattle3"]
-shape = SubResource("CircleShape2D_bhyh4")
-
-[node name="slimeBattle4" parent="." instance=ExtResource("2_g4kd5")]
-position = Vector2(-4, 0)
-
-[node name="slimeFourBox" type="CollisionShape2D" parent="slimeBattle4"]
-shape = SubResource("CircleShape2D_bhyh4")
-
 [connection signal="new_turn" from="." to="slimeBattle" method="_on_enemies_f_1g_1_new_turn"]

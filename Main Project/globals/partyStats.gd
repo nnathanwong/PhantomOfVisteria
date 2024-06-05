@@ -28,7 +28,7 @@ func turn_character_sp(turn):
 # STATS FOR ANCEL
 # Max stats
 var ancel_max_hp = 100
-var ancel_max_sp = 15
+var ancel_max_sp = 5
 # Current stats
 var ancel_hp = ancel_max_hp
 var ancel_sp = ancel_max_sp
@@ -44,7 +44,7 @@ var ancel_confusion = false
 # STATS FOR LORANE
 # Max stats
 var lorane_max_hp =  126
-var lorane_max_sp = 55
+var lorane_max_sp = 15
 # Current stats
 var lorane_hp = lorane_max_hp
 var lorane_sp = lorane_max_sp
