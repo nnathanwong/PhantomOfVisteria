@@ -1,0 +1,37 @@
+Hello! This documentation is supposed to tell you all your system requirements to run this game as well as any error or bugs you many encounter (to our knowledge)! In order to run Phantom of Visteria, you must have Godot 4 downloaded. To Download, visit https://godotengine.org/download/windows/
+
+Hardware Minimum Requirements:
+
+Operating System:
+Windows: At least Windows 7
+MacOS: 10.13 or 10.15
+Linux: Any model after 2016
+
+Graphics Card:
+Forward+ rendering method: Integrated graphics with full Vulkan 1.0 support
+Mobile rendering method: Integrated graphics with full Vulkan 1.0 support
+Compatibility rendering method: Integrated graphics with full OpenGL 3.3 support
+
+Random Access Memory (RAM):
+Minimum: 4GB
+Recommended: 8 GB
+
+Storage:
+At least 200 MB for Godot
+At least 375 MB to run Phantom of Visteria
+
+Common Errors:
+
+Project not Loading:
+Godot is slow in rendering this project, please wait a moment when loading the game
+If the game does not load, try to exit out and re-import it
+
+Contact Information
+Our Team:
+amw548@drexel.edu
+ds3862@drexel.edu
+njw87@drexel.edu
+an953@drexel.edu
+
+For more information on system requirements and issues:
+https://docs.godotengine.org/en/stable/about/system_requirements.html
